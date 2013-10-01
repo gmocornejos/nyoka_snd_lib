@@ -1,8 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include <vorbis/vorbisfile.h>
-
 #include <ogg_vorbis.hh>
 #include <plot.hh>
 

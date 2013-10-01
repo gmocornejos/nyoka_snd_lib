@@ -14,7 +14,7 @@ void plot_decoder(double *buffer, int smpls_read, double smpls_rate){
         textfile.close();
 
         cout << "Press ENTER to close the program \n";
-        system("gnuplot plotscripts/decoder_plot.sh");
+        system("gnuplot ../plotscripts/decoder_plot.sh");
 }
 
 
@@ -32,7 +32,7 @@ void plot_fft(complex<double> *buffer, int smpls_read, double smpls_rate){
         textfile.close();
         cout << "fundamental frequency " << (double)pos*smpls_rate/smpls_read << "\n";//
         cout << "Press ENTER to close the program \n";
-        system("gnuplot plotscripts/fft_plot.sh");
+        system("gnuplot ../plotscripts/fft_plot.sh");
 }
 
 void plot_ifft(double *buffer, int smpls_read, double smpls_rate){
@@ -44,5 +44,5 @@ void plot_ifft(double *buffer, int smpls_read, double smpls_rate){
         textfile.close();
 
         cout << "Press ENTER to close the program \n";
-        system("gnuplot plotscripts/decoder_plot.sh");
+        system("gnuplot ../plotscripts/decoder_plot.sh");
 }
