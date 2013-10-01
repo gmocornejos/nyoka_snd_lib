@@ -34,15 +34,3 @@ void plot_fft(complex<double> *buffer, int smpls_read, double smpls_rate){
         cout << "Press ENTER to close the program \n";
         system("gnuplot ../plotscripts/fft_plot.sh");
 }
-
-void plot_ifft(double *buffer, int smpls_read, double smpls_rate){
-        ofstream textfile;
-        textfile.open("outputdata.txt");
-        for(int i = 0; i < smpls_read; i++){
-                textfile << ((double)i/smpls_rate) << " " << buffer[i] << "\n";
-        }
-        textfile.close();
-
-        cout << "Press ENTER to close the program \n";
-        system("gnuplot ../plotscripts/decoder_plot.sh");
-}

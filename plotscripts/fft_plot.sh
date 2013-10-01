@@ -1,5 +1,5 @@
-set title "Audio plot, Time domain"
-set xlabel "Time (s)"
+set title "Audio plot, Frequency domain"
+set xlabel "Frequency (Hz)"
 set ylabel "relative Amplitude"
-plot "outputdata.txt" using 1:2 with dots 
+plot "outputdata.txt" using 1:2 with lines
 pause -1

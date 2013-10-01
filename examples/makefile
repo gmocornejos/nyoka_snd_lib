@@ -1,8 +1,28 @@
-all: decoder clean
+VORBIS = ../build/ogg_vorbis.o `pkg-config --libs vorbis vorbisfile vorbisenc`
+FFTWEST = ../build/fftwest.o `pkg-config --libs fftw3`
+
+all: decoder fftwest ifftwest clean
 
 decoder:
 	g++ -c -I../include decoder.cpp
-	g++ -o decoder.exe decoder.o ../build/plot.o ../build/ogg_vorbis.o `pkg-config --libs vorbis vorbisfile vorbisenc`
+	g++ -o decoder.exe decoder.o ../build/plot.o $(VORBIS)
+
+fftwest:
+	g++ -c -I../include fftwest.cpp
+	g++ -o fftwest.exe fftwest.o ../build/plot.o $(VORBIS) $(FFTWEST)	
+
+ifftwest:
+	g++ -c -I../include ifftwest.cpp
+	g++ -o ifftwest.exe ifftwest.o ../build/plot.o $(VORBIS) $(FFTWEST) 
+
+whitenoise:
+	g++ -c -I../include whitenoise.cpp
+	g++ -o whitenoise.exe whitenoise.o ../build/noise.o ../build/plot.o $(VORBIS)
 
 clean:
 	rm *.o
+
+exerm:
+	rm *.exe
+	rm outputdata.txt
+	rm *.ogg
