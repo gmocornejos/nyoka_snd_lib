@@ -73,11 +73,8 @@ void four1(double *data, const int n, const int isign) {
 
 void realft(double *data, const int size) {
 	int i,i1,i2,i3,i4,n=size;
-	double c1=0.5,c2,h1r,h1i,h2r,h2i,wr,wi,wpr,wpi,wtemp;
-	double theta=3.1415/double(n>>1); 
-
-	c2=0.5;
-	theta = -theta;
+	double c1=0.5,c2=0.5,h1r,h1i,h2r,h2i,wr,wi,wpr,wpi,wtemp;
+	double theta=-3.1415/double(n>>1); 
 
 	wtemp=sin(0.5*theta);
 	wpr = -2.0*wtemp*wtemp;
@@ -104,7 +101,7 @@ void realft(double *data, const int size) {
 	data[1] = h1r-data[1];
 }
 
-void cosft (double *y, const int isign, const int size){
+void cosft (double *y, const int size){
 	std::cout << "entro a cosft "  << "\n";
 	const double PI=3.1415;
 	int j,n=size-1;
@@ -143,68 +140,3 @@ void cosft (double *y, const int isign, const int size){
 		y[j]=sum;
 	}
 }	
-	/*
-	cout << "entonces ni entra? "  << "\n";
-	const double PI=3.141592653589793238;
-	int i,n=size;
-	double sum,sum1,theta,wi=0.0,wi1,wpi,wpr,wr=1.0,wr1,wtemp;
-	double y1,y2,ytemp;
-	
-	theta=0.5*PI/n;
-	wr1=cos(theta);
-	wi1=sin(theta);
-	
-	wpr = -2.0*wi1*wi1;
-	wpi = sin(2*theta);
-	cout << "sera aqui? "  << "\n";
-	if (isign == 1){
-		for (i=0;i<n/2;i++) {
-			y1=0.5*(y[i]+y[n-i-1]);
-			y2=wi1*(y[i]-y[n-1-i]);
-			y[i]=y1+y2;
-			y[n-1-i]=y1-y2;
-			wr1=(wtemp=wr1)*wpr-wi1*wpi+wr1;
-			wi1=wi1*wpr+wtemp*wpi+wi1;
-		}
-		realft(y,1,size);
-		
-		for (i=2;i<n;i+=2){
-			wr=(wtemp=wr)*wpr-wi*wpi+wr;
-			wi=wi*wpr+wtemp*wpi+wi;
-			y1=y[i]*wr-y[i+1]*wi;
-			y2=y[i+1]*wr+y[i]*wi;
-			y[i]=y1;
-			y[i+1]=y2;
-		}
-		sum=0.5*y[1];
-		for (i=2;i<n;i+=2){
-			sum1=sum;
-			sum += y[i];
-			y[i]=sum1;
-		}
-	} 
-	else if (isign == -1){
-		ytemp=y[n-1];
-		for (i=n-1;i>2;i-=2)
-			y[i]=y[i-2]-y[i];
-		y[1]=2.0*ytemp;
-		for (i=2;i<n;i+=2) {
-			wr=(wtemp=wr)*wpr-wi*wpi+wr;
-			wi=wi*wpr+wtemp*wpi+wi;
-			y1=y[i]*wr+y[i+1]*wi;
-			y2=y[i+1]*wr-y[i]*wi;
-			y[i]=y1;
-			y[i+1]=y2;
-		}
-		realft(y,-1,size);
-		for (i=0;i<n/2;i++) {
-			y1=y[i]+y[n-1-i];
-			y2=(0.5/wi1)*(y[i]-y[n-1-i]);
-			y[i]=0.5*(y1+y2);
-			y[n-1-i]=0.5*(y1-y2);
-			wr1=(wtemp=wr1)*wpr-wi1*wpi+wr1;
-			wi1=wi1*wpr+wtemp*wpi+wi1;
-		}
-	}
-}
-*/

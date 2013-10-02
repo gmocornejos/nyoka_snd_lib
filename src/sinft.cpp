@@ -2,6 +2,29 @@
 #include <iostream>
 #include <math.h>
 
+int get_array_lenght (double *arr, const int size) {	
+	int n,array_lenght=0;
+	for (n=2; 3<4; n++) {
+		if(pow(2, n) >= size){
+			array_lenght = pow(2, n);
+			break;
+		}	
+	}
+	return array_lenght;
+}
+
+void complete_arr (double *arr_in, double *arr_out, const int size) {
+	int array_lenght = get_array_lenght(arr_in, size);
+	
+	for (int c=0; c<array_lenght; c++) {
+		if(c<size){
+			arr_out[c]= arr_in[c];
+		}	
+		else{
+			arr_out[c]= 0;
+		}
+	}	
+}
 
 void four1(double *data, const int n, const int isign) {
 	int nn,mmax,m,j,istep,i;
@@ -24,7 +47,7 @@ void four1(double *data, const int n, const int isign) {
 	mmax=2;
 	while (nn > mmax) {
 		istep=mmax << 1;
-		theta=isign*(6.28318530717959/mmax);
+		theta=isign*(6.2831/mmax);
 		wtemp=sin(0.5*theta);
 		wpr = -2.0*wtemp*wtemp;
 		wpi=sin(theta);
@@ -47,18 +70,11 @@ void four1(double *data, const int n, const int isign) {
 	}
 }
 
-void realft(double *data, const int isign, const int size) {
+void realft(double *data, const int size) {
 	int i,i1,i2,i3,i4,n=size;
-	double c1=0.5,c2,h1r,h1i,h2r,h2i,wr,wi,wpr,wpi,wtemp;
-	double theta=3.141592653589793238/double(n>>1); 
-	if (isign == 1) {
-		c2 = -0.5;
-		four1(data,size,1);
-	} 
-	else {
-		c2=0.5;
-		theta = -theta;
-	}
+	double c1=0.5,c2=0.5,h1r,h1i,h2r,h2i,wr,wi,wpr,wpi,wtemp;
+	double theta=-3.1415/double(n>>1); 
+	
 	wtemp=sin(0.5*theta);
 	wpr = -2.0*wtemp*wtemp;
 	wpi=sin(theta);
@@ -78,21 +94,14 @@ void realft(double *data, const int isign, const int size) {
 		wr=(wtemp=wr)*wpr-wi*wpi+wr;
 		wi=wi*wpr+wtemp*wpi+wi;
 	}
-	if (isign == 1) {
-		data[0] = (h1r=data[0])+data[1];
-		data[1] = h1r-data[1];
-	}
-	else {
-		data[0]=c1*((h1r=data[0])+data[1]);
-		data[1]=c1*(h1r-data[1]);
-		four1(data,size,-1);
-	}
+	data[0] = (h1r=data[0])+data[1];
+	data[1] = h1r-data[1];
 }
 
 void sinft (double *y, const int size){
 	int j,n=size;
 	double sum,y1,y2,theta,wi=0.0,wr=1.0,wpi,wpr,wtemp;
-	theta=3.141592653589793238/double(n);
+	theta=3.1415/double(n);
 	
 	wtemp=sin(0.5*theta);
 	wpr= -2.0*wtemp*wtemp;
@@ -107,7 +116,7 @@ void sinft (double *y, const int size){
 		y[j]=y1+y2;
 		y[n-j]=y1-y2;
 	}
-	realft(y,1,size);
+	realft(y,size);
 	y[0]*=0.5;
 	sum=y[1]=0.0;
 	for (j=0;j<n-1;j+=2) {
