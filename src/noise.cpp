@@ -12,13 +12,10 @@ void whitenoise(int smpls_num, double* buffer){
 	for(int i = 0; i < smpls_num; i++){
 		sign = (double) (rand()%100)/100;
 		ran = (double) (rand()%100)/100;
-//		for(int j = 0; j < 100; j++) sum = sum + (double)(rand()%100)/100;
-//		ran = sum/100;
-//		sum = 0;
 		if(sign <= 0.5){
-			buffer[i] = ran*-1; //(double)-1*cons*exp(-0.5*pow(ran, 2));
+			buffer[i] = ran*-1;
 		}else{
-			buffer[i] = ran; //cons*exp(-0.5*pow(ran, 2));
+			buffer[i] = ran;
 		}
 	}
 }
