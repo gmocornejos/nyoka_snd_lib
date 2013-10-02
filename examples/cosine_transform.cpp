@@ -3,13 +3,14 @@
 #include <stdlib.h>
 #include <math.h>
 #include <fstream>
+#include <complex>
 
 #include <cosft.hh>
 #include <plot.hh>
 #include <ogg_vorbis.hh>
 
 using namespace std;
-
+/*
 int get_array_lenght (double *arr, const int size) {	
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
@@ -32,7 +33,7 @@ void complete_arr (double *arr_in, double *arr_out, const int size) {
 			arr_out[c]= 0;
 		}
 	}	
-} 	
+} */	
 
 int main(int argc, char *argv[]){
 	const char *fname = argv[1];
@@ -56,11 +57,13 @@ int main(int argc, char *argv[]){
 	
 	free(buffer);
 	
+	cout << "aqui llega2 "  << "\n";
+	
 	cosft(abuffer, 1, smpls_num);
 	cout << "aqui no "  << "\n";
 	
-	plot_freq_real(buffer, smpls_num, smpls_rate);
-	
+	plot_freq_real(abuffer, tam, smpls_rate);
+
 	free(abuffer);
 	
 	return 0;
