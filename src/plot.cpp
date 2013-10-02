@@ -14,7 +14,7 @@ void plot_time(double *buffer, int smpls_read, double smpls_rate){
         textfile.close();
 
         cout << "Press ENTER to close the program \n";
-        system("gnuplot ../plotscripts/decoder_plot.sh");
+        system("gnuplot ../plotscripts/plot_time.sh");
 }
 
 
@@ -32,7 +32,7 @@ void plot_freq_cmplx(complex<double> *buffer, int smpls_read, double smpls_rate)
         textfile.close();
         cout << "fundamental frequency " << (double)0.5*pos*smpls_rate/smpls_read << "\n";//
         cout << "Press ENTER to close the program \n";
-        system("gnuplot ../plotscripts/fft_plot.sh");
+        system("gnuplot ../plotscripts/plot_freq.sh");
 }
 
 void plot_freq_real(double *buffer, int smpls_read, double smpls_rate){
@@ -41,4 +41,8 @@ void plot_freq_real(double *buffer, int smpls_read, double smpls_rate){
 	for(int i = 0; i < smpls_read; i++){
 		textfile << (double) i*smpls_rate/smpls_read << " " << buffer[i] << "\n";
 	}
+	textfile.close();
+
+	cout << "Press ENTER to close the program \n";
+        system("gnuplot ../plotscripts/plot_freq.sh");
 }
