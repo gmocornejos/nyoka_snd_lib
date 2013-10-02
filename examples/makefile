@@ -15,6 +15,14 @@ ifftwest:
 	g++ -c -I../include ifftwest.cpp
 	g++ -o ifftwest.exe ifftwest.o ../build/plot.o $(VORBIS) $(FFTWEST) 
 
+cosft:
+	g++ -c -I../include cosine_transform.cpp
+	g++ -o cosine_transform.exe cosine_transform.o ../build/plot.o $(VORBIS) ../build/cosft.o
+	
+sinft:
+	g++ -c -I../include sine_transform.cpp
+	g++ -o sine_transform.exe sine_transform.o ../build/plot.o $(VORBIS) ../build/sinft.o   
+
 whitenoise:
 	g++ -c -I../include whitenoise.cpp
 	g++ -o whitenoise.exe whitenoise.o ../build/noise.o ../build/plot.o $(VORBIS)
