@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
 	cout << "sample rate " << smpls_rate << "\n";
 
 	double *buffer = (double*)malloc(smpls_num*sizeof(double));
-	long smpls_read = decode(fname, buffer, smpls_num);
+	int smpls_read = decode(fname, buffer, smpls_num);
 	cout << "smpls_read " << smpls_read << "\n";
 
 	plot_decoder(buffer, smpls_read, smpls_rate);

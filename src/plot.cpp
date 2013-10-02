@@ -23,14 +23,14 @@ void plot_fft(complex<double> *buffer, int smpls_read, double smpls_rate){
         textfile.open("outputdata.txt");
         double max = 0; int pos;
         for(int i = 0; i < smpls_read; i++){
-                textfile << ((double)i*smpls_rate/smpls_read) << " " << abs(buffer[i]) << "\n";//
+                textfile << ((double)0.5*i*smpls_rate/smpls_read) << " " << abs(buffer[i]) << "\n";//
                 if(abs(buffer[i]) > max){
                         max = abs(buffer[i]);
                         pos = i;
                 }
         }
         textfile.close();
-        cout << "fundamental frequency " << (double)pos*smpls_rate/smpls_read << "\n";//
+        cout << "fundamental frequency " << (double)0.5*pos*smpls_rate/smpls_read << "\n";//
         cout << "Press ENTER to close the program \n";
         system("gnuplot ../plotscripts/fft_plot.sh");
 }
