@@ -19,7 +19,7 @@ int main(int argc, char *argv[]){
 	int smpls_read = decode(fname, buffer, smpls_num);
 	cout << "smpls_read " << smpls_read << "\n";
 
-	plot_decoder(buffer, smpls_read, smpls_rate);
+	plot_time(buffer, smpls_read, smpls_rate);
 	free(buffer);
 	return 0;
 }

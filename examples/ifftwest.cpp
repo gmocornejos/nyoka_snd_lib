@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
 
 
 //	encoder(outfilename, ibuffer, smpls_num, smpls_rate);
-	plot_decoder(ibuffer, smpls_read, smpls_rate);
+	plot_time(ibuffer, smpls_read, smpls_rate);
 	free(ibuffer);
 	return 0; 
 }

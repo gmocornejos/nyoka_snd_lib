@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
 	cosft(abuffer, 1, smpls_num);
 	cout << "aqui no "  << "\n";
 	
-	//plot_decoder(buffer, smpls_num, smpls_rate);
+	plot_freq_real(buffer, smpls_num, smpls_rate);
 	
 	free(abuffer);
 	
