@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <math.h>
+#include <stdlib.h>	
 
 int get_array_lenght (double *arr, const int size) {	
 	int n,array_lenght=0;
@@ -47,7 +48,7 @@ void four1(double *data, const int n, const int isign) {
 	mmax=2;
 	while (nn > mmax) {
 		istep=mmax << 1;
-		theta=isign*(6.28318530717959/mmax);
+		theta=isign*(6.2830/mmax);
 		wtemp=sin(0.5*theta);
 		wpr = -2.0*wtemp*wtemp;
 		wpi=sin(theta);
@@ -70,23 +71,21 @@ void four1(double *data, const int n, const int isign) {
 	}
 }
 
-void realft(double *data, const int isign, const int size) {
+void realft(double *data, const int size) {
 	int i,i1,i2,i3,i4,n=size;
 	double c1=0.5,c2,h1r,h1i,h2r,h2i,wr,wi,wpr,wpi,wtemp;
-	double theta=3.141592653589793238/double(n>>1); 
-	if (isign == 1) {
-		c2 = -0.5;
-		four1(data,size,1);
-	} 
-	else {
-		c2=0.5;
-		theta = -theta;
-	}
+	double theta=3.1415/double(n>>1); 
+
+	c2=0.5;
+	theta = -theta;
+
 	wtemp=sin(0.5*theta);
 	wpr = -2.0*wtemp*wtemp;
 	wpi=sin(theta);
 	wr=1.0+wpr;
 	wi=wpi;
+	
+	std::cout << "antes del for de realft "  << "\n";
 	for (i=1;i<(n>>2);i++) {
 		i2=1+(i1=i+i);
 		i4=1+(i3=n-i1);
@@ -101,18 +100,50 @@ void realft(double *data, const int isign, const int size) {
 		wr=(wtemp=wr)*wpr-wi*wpi+wr;
 		wi=wi*wpr+wtemp*wpi+wi;
 	}
-	if (isign == 1) {
-		data[0] = (h1r=data[0])+data[1];
-		data[1] = h1r-data[1];
-	}
-	else {
-		data[0]=c1*((h1r=data[0])+data[1]);
-		data[1]=c1*(h1r-data[1]);
-		four1(data,size,-1);
-	}
+	data[0] = (h1r=data[0])+data[1];
+	data[1] = h1r-data[1];
 }
 
 void cosft (double *y, const int isign, const int size){
+	std::cout << "entro a cosft "  << "\n";
+	const double PI=3.1415;
+	int j,n=size-1;
+	double sum,y1,y2,theta,wi=0.0,wpi,wpr,wr=1.0,wtemp;
+	std::cout << "aqui? "  << "\n";
+	double *yy = (double*)malloc(n*sizeof(double));
+	//double yy[n];
+	theta=PI/n;
+	wtemp=sin(0.5*theta);
+	wpr	= -2.0*wtemp*wtemp;
+	wpi=sin(theta);
+	sum=0.5*(y[0]-y[n]);
+	yy[0]=0.5*(y[0]+y[n]);
+	
+	std::cout << "antes del for "  << "\n";
+	for (j=1;j<n/2;j++) {
+		wr=(wtemp=wr)*wpr-wi*wpi+wr;
+		wi=wi*wpr+wtemp*wpi+wi;
+		y1=0.5*(y[j]+y[n-j]);
+		y2=(y[j]-y[n-j]);
+		yy[j]=y1-wi*y2;
+		yy[n-j]=y1+wi*y2;
+		sum += wr*y2;
+	}
+	std::cout << "antes de fourier "  << "\n";
+	yy[n/2]=y[n/2];
+	std::cout << "fijo "  << "\n";
+	realft(yy,size);
+	
+	for (j=0;j<n;j++) y[j]=yy[j];
+	y[n]=y[1];
+	y[1]=sum;
+	
+	for (j=3;j<n;j+=2) {
+		sum += y[j];
+		y[j]=sum;
+	}
+}	
+	/*
 	cout << "entonces ni entra? "  << "\n";
 	const double PI=3.141592653589793238;
 	int i,n=size;
@@ -176,3 +207,4 @@ void cosft (double *y, const int isign, const int size){
 		}
 	}
 }
+*/

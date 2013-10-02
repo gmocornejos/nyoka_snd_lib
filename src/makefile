@@ -1,4 +1,4 @@
-all: plot ogg_vorbis fftwest noise sinft lib
+all: plot ogg_vorbis fftwest noise cosft lib
 
 plot:
 	g++ -c plot.cpp

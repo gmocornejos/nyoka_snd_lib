@@ -1,7 +1,7 @@
 VORBIS = ../build/ogg_vorbis.o `pkg-config --libs vorbis vorbisfile vorbisenc`
 FFTWEST = ../build/fftwest.o `pkg-config --libs fftw3`
 
-all: decoder fftwest ifftwest clean
+all: decoder fftwest ifftwest cosft clean
 
 decoder:
 	g++ -c -I../include decoder.cpp
