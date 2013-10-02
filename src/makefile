@@ -14,7 +14,7 @@ noise:
 
 pitch_filter:
 	g++ -c pitch_filter.cpp
-	
+
 cosft:
 	g++ -c cosft.cpp
 

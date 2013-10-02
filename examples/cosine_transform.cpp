@@ -38,16 +38,9 @@ int main(int argc, char *argv[]){
 	cosft(abuffer, tam);
 	cout << "aqui no "  << "\n";
 	
-	plot_decoder(abuffer, tam, smpls_rate);
-	/*
-	complex<double> *plotbuff = (complex<double>*) malloc(tam*sizeof(complex<double>));
-	
-	for(int c=0; c<tam; c++){
-		plotbuff[c]= complex<double>(abuffer[c],0);
-	}
+	plot_freq_real(abuffer, tam, smpls_rate);
+
 	free(abuffer);
 	
-	plot_fft(plotbuff, tam, smpls_rate);
-	*/
 	return 0;
 }

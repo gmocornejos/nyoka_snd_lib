@@ -37,16 +37,9 @@ int main(int argc, char *argv[]){
 	sinft(abuffer, smpls_num);
 	cout << "aqui no "  << "\n";
 	
-	plot_decoder(abuffer, tam, smpls_rate);
+	plot_freq_real(abuffer, tam, smpls_rate);
 	
-/*	complex<double> *plotbuff = (complex<double>*) malloc(tam*sizeof(complex<double>));
+	free(abuffer)
 	
-	for(int c=0; c<tam; c++){
-		plotbuff[c]= complex<double>(abuffer[c],0);
-	}
-	free(abuffer);
-	
-	plot_fft(plotbuff, tam, smpls_rate);
-	*/
 	return 0;
 }
