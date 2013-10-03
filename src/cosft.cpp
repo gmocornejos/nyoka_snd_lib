@@ -139,4 +139,5 @@ void cosft (double *y, const int size){
 		sum += y[j];
 		y[j]=sum;
 	}
+	free(yy);
 }	

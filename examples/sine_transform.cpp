@@ -32,14 +32,19 @@ int main(int argc, char *argv[]){
 	
 	free(buffer);
 	
-	cout << "aqui llega2 "  << "\n";
+	sinft(abuffer, tam);
 	
-	sinft(abuffer, smpls_num);
 	cout << "aqui no "  << "\n";
 	
-	plot_freq_real(abuffer, tam, smpls_rate);
+	complex<double> *plot_buff = (complex<double>*) malloc(tam*sizeof(complex<double>));
 	
+	for(int c=0; c<(tam/2); c++){
+		plot_buff[c]=complex<double> (abuffer[2*c], abuffer[2*c+1]);
+	}
 	free(abuffer);
 	
+	plot_freq_cmplx(plot_buff, tam, smpls_rate);
+
+	free(plot_buff);
 	return 0;
 }
