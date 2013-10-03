@@ -1,4 +1,4 @@
-all: plot ogg_vorbis fftwest noise pitch_filter sinft cosft lib
+all: plot ogg_vorbis fftwest noise pitch_filter sinft cosft freqfilters lib
 
 plot:
 	g++ -c plot.cpp
@@ -20,6 +20,9 @@ cosft:
 
 sinft:
 	g++ -c sinft.cpp
+
+freqfilters:
+	g++ -c freqfilters.cpp
 
 lib:
 	mv *.o ../build/

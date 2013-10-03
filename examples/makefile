@@ -31,10 +31,14 @@ pitch_filter:
 	g++ -c -I../include pitch_filter.cpp
 	g++ -o pitch_filter.exe pitch_filter.o ../build/plot.o $(VORBIS) ../build/pitch_filter.o
 
+bandpass:
+	g++ -c -I../include bandpass.cpp
+	g++ -o bandpass.exe bandpass.o ../build/plot.o $(VORBIS) ../build/freqfilters.o
+
 clean:
 	rm *.o
 
-exerm:
+exterm:
 	rm *.exe
 	rm outputdata.txt
 	rm *.ogg
