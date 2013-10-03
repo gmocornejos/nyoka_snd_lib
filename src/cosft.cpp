@@ -82,7 +82,6 @@ void realft(double *data, const int size) {
 	wr=1.0+wpr;
 	wi=wpi;
 	
-	std::cout << "antes del for de realft "  << "\n";
 	for (i=1;i<(n>>2);i++) {
 		i2=1+(i1=i+i);
 		i4=1+(i3=n-i1);
@@ -102,13 +101,12 @@ void realft(double *data, const int size) {
 }
 
 void cosft (double *y, const int size){
-	std::cout << "entro a cosft "  << "\n";
 	const double PI=3.1415;
 	int j,n=size-1;
 	double sum,y1,y2,theta,wi=0.0,wpi,wpr,wr=1.0,wtemp;
-	std::cout << "aqui? "  << "\n";
+	
 	double *yy = (double*)malloc(n*sizeof(double));
-	//double yy[n];
+
 	theta=PI/n;
 	wtemp=sin(0.5*theta);
 	wpr	= -2.0*wtemp*wtemp;
@@ -116,7 +114,6 @@ void cosft (double *y, const int size){
 	sum=0.5*(y[0]-y[n]);
 	yy[0]=0.5*(y[0]+y[n]);
 	
-	std::cout << "antes del for "  << "\n";
 	for (j=1;j<n/2;j++) {
 		wr=(wtemp=wr)*wpr-wi*wpi+wr;
 		wi=wi*wpr+wtemp*wpi+wi;
@@ -126,9 +123,9 @@ void cosft (double *y, const int size){
 		yy[n-j]=y1+wi*y2;
 		sum += wr*y2;
 	}
-	std::cout << "antes de fourier "  << "\n";
+
 	yy[n/2]=y[n/2];
-	std::cout << "fijo "  << "\n";
+
 	realft(yy,size);
 	
 	for (j=0;j<n;j++) y[j]=yy[j];

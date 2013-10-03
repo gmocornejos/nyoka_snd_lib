@@ -27,16 +27,11 @@ int main(int argc, char *argv[]){
 	
 	double *abuffer = (double*)malloc(tam*sizeof(double));
 	
-	cout << "aqui llega "  << "\n";
-	
 	complete_arr(buffer,abuffer,smpls_num);
 	
 	free(buffer);
 	
-	cout << "aqui llega2 "  << "\n";
-	
 	cosft(abuffer, tam);
-	cout << "aqui no "  << "\n";
 	
 	complex<double> *plot_buff = (complex<double>*) malloc(tam*sizeof(complex<double>));
 	
