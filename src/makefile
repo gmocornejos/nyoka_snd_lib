@@ -1,4 +1,4 @@
-all: plot ogg_vorbis fftwest pitch_filter noise sinft lib
+all: plot ogg_vorbis fftwest noise pitch_filter sinft cosft lib
 
 plot:
 	g++ -c plot.cpp

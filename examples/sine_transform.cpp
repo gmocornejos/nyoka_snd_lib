@@ -39,7 +39,7 @@ int main(int argc, char *argv[]){
 	
 	plot_freq_real(abuffer, tam, smpls_rate);
 	
-	free(abuffer)
+	free(abuffer);
 	
 	return 0;
 }
