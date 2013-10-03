@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-all: plot ogg_vorbis fftwest noise pitch_filter lib
-=======
-<<<<<<< HEAD
-all: plot ogg_vorbis fftwest noise cosft lib
-=======
-<<<<<<< HEAD
-all: plot ogg_vorbis fftwest noise pitch_filter lib
-=======
-all: plot ogg_vorbis fftwest noise sinft lib
->>>>>>> 0abe564f899140c7b705fe67c12bdab4d24763e0
->>>>>>> 6ca43cfcec52ffa6976907b03247846ee21d2e3d
->>>>>>> 232ce660bdf865170df913a68dad0b5f2205308d
+all: plot ogg_vorbis fftwest noise pitch_filter sinft cosft lib
 
 plot:
 	g++ -c plot.cpp
