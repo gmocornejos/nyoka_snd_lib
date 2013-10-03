@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 	complex<double> *retbuffer = (complex<double>*) malloc((0.5*smpls_read+1)*sizeof(complex<double>));
 	fft_west(smpls_read, buffer, retbuffer);
 	free(buffer);
-	plot_freq_cmplx(retbuffer, (0.5*smpls_read+1), smpls_rate);
+	plot_freq(retbuffer, smpls_read, smpls_rate);
 	free(retbuffer);
 	return 0;
 }
