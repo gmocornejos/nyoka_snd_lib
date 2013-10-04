@@ -17,11 +17,11 @@ ifftwest:
 
 cosft:
 	g++ -c -I../include cosine_transform.cpp
-	g++ -o cosine_transform.exe cosine_transform.o ../build/plot.o $(VORBIS) ../build/cosft.o
+	g++ -o cosine_transform.exe cosine_transform.o ../build/plot.o $(VORBIS) $(FFTWEST) ../build/cosft.o
 	
 sinft:
 	g++ -c -I../include sine_transform.cpp
-	g++ -o sine_transform.exe sine_transform.o ../build/plot.o $(VORBIS) ../build/sinft.o   
+	g++ -o sine_transform.exe sine_transform.o ../build/plot.o $(VORBIS) $(FFTWEST) ../build/sinft.o   
 
 whitenoise:
 	g++ -c -I../include whitenoise.cpp

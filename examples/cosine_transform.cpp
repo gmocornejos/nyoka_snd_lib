@@ -31,14 +31,12 @@ int main(int argc, char *argv[]){
 	
 	free(buffer);
 	
-	cosft(abuffer, tam);
-	
 	complex<double> *plot_buff = (complex<double>*) malloc(tam*sizeof(complex<double>));
 	
-	for(int c=0; c<(tam/2); c++){
-		plot_buff[c]=complex<double> (abuffer[2*c], abuffer[2*c+1]);
-	}
+	cosft(abuffer,plot_buff,tam);
+
 	free(abuffer);
+	cout << "llega aqui " << "\n";
 	
 	plot_freq(plot_buff, tam, smpls_rate);
 
