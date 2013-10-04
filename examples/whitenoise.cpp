@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){\
 	double *buffer = (double*) malloc(smpls_num*sizeof(double));
 	whitenoise(smpls_num, buffer);
 	//Assuming 44.1 KHz as sample rate.
-	plot_decoder(buffer, smpls_num, 44100);
+	plot_time(buffer, smpls_num, 44100);
 	//encoder(outfilename, buffer, smpls_num, 44100);
 	free(buffer);
 }

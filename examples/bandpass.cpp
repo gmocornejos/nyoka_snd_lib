@@ -4,6 +4,7 @@
 #include <plot.hh>
 #include <ogg_vorbis.hh>
 #include <freqfilters.hh>
+#include <fftwest.hh>
 
 using namespace std;
 
@@ -24,9 +25,15 @@ int main(int argc, char *argv[]){
 
 	double *bandbuff = (double*) malloc(smpls_num*sizeof(double));
 	bandpass(smpls_num, smpls_rate, buffer, bandbuff, lowfreq, highfreq);
-	plot_time(bandbuff, smpls_num, smpls_rate);
-//	encoder(outfilename, lowbuff, smpls_num, smpls_rate);
 	free(buffer);
+
+	complex<double> *fftbuff = (complex<double>*) malloc((0.5*smpls_num +1)*sizeof(complex<double>));
+	fft_west(smpls_num, bandbuff, fftbuff);
 	free(bandbuff);
+
+	plot_freq(fftbuff, smpls_num, smpls_read);
+//	plot_time(bandbuff, smpls_num, smpls_rate);
+//	encoder(outfilename, lowbuff, smpls_num, smpls_rate);
+	free(fftbuff);
 	return 0;
 }

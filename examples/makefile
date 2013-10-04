@@ -1,7 +1,7 @@
 VORBIS = ../build/ogg_vorbis.o `pkg-config --libs vorbis vorbisfile vorbisenc`
 FFTWEST = ../build/fftwest.o `pkg-config --libs fftw3`
 
-all: decoder fftwest ifftwest pitch_filter cosft sinft clean 
+all: decoder fftwest ifftwest pitch_filter cosft sinft bandpass clean 
 
 decoder:
 	g++ -c -I../include decoder.cpp
@@ -33,7 +33,7 @@ pitch_filter:
 
 bandpass:
 	g++ -c -I../include bandpass.cpp
-	g++ -o bandpass.exe bandpass.o ../build/plot.o $(VORBIS) ../build/freqfilters.o
+	g++ -o bandpass.exe bandpass.o ../build/plot.o $(VORBIS) ../build/freqfilters.o $(FFTWEST)
 
 clean:
 	rm *.o
