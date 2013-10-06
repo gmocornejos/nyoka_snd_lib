@@ -7,7 +7,11 @@
 #include <fftwest.hh>
 
 using namespace std;	
-
+/*! \fn  get_array_lenght (double *arr, const int size)
+ * \brief The function found the highest closest number to the size of the array 
+ * \param size is the size of the array 
+ * \return number result: Is the number power of two closest and bigger than size  .
+ */
 int get_array_lenght (double *arr, const int size) {	
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
@@ -18,7 +22,11 @@ int get_array_lenght (double *arr, const int size) {
 	}
 	return array_lenght;
 }
-
+/*! \fn  complete_arr (double *arr_in, double *arr_out, const int size)
+ * \brief This function un arreglo mas grande con uno mas pequeño y ceros en los espacios sobrantes 
+ * \param  arr_in el arreglo que entra mas pequeño 
+ * arr_out el arreglo grande que sale de la funcion y size el tamaño del arreglo pequeño.
+ */
 void complete_arr (double *arr_in, double *arr_out, const int size) {
 	int array_lenght = get_array_lenght(arr_in, size);
 	
@@ -31,7 +39,10 @@ void complete_arr (double *arr_in, double *arr_out, const int size) {
 		}
 	}	
 } 
-
+/*! \fn  cosft (double *y, complex<double> *rbuffer, const int size){
+ * \brief This function es la encargada de realizar la transformada de cosenos la cual esta dada por la ecuacion f_j = \sum_{k=0}^{n-1} x_k \cos \left[\frac{\pi}{n} j \left(k+\frac{1}{2}\right) \right] 
+ * \param "size" is the size of the array, "*y" es el puntero con el vector que ingresa el cual debe ser de un tamaño potencia de dos,rbuffer es el vector donde se va a debolver el arreglo solo se nesecita el espacio en memoria.
+  */
 void cosft (double *y, complex<double> *rbuffer, const int size){
 	const double PI=3.1415;
 	int j,n=size-1;
