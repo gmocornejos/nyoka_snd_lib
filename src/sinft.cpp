@@ -7,7 +7,18 @@
 
 using namespace std;	
 
+/*! \fn  get_array_lenght (double *arr, const int size)
+ * \brief The function found the highest closest number to the size of the array 
+ * \param size is the size of the array 
+ * \return number result: Is the number power of two closest and bigger than size  .
+ */
+ 
+
+
+
 int get_array_lenght (const int size) {	
+>>>>>>> c9ff48693d872e4de93dbd7f8c40c74cce94b2e7
+
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
 		if(pow(2, n) >= size){
@@ -17,7 +28,13 @@ int get_array_lenght (const int size) {
 	}
 	return array_lenght;
 }
-
+ /*! \fn  complete_arr (double *arr_in, double *arr_out, const int size)
+ * \brief This function fill an array power of two with other smaller or equal array and with zeros in extra spaces
+ * \details It is equivalent to the imaginary parts of a DFT of roughly twice the length, is a linear and invertible function  
+ * \param : "*arr_in" is a pointer  towards the smallest array with which will fill the biggest array. 
+ * \param : "*arr_out" is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros.
+ * \param : "size" is the size of the smaller array .
+ */
 void complete_arr (double *arr_in, double *arr_out, const int size) {
 	int array_lenght = get_array_lenght(size);
 	
@@ -31,6 +48,13 @@ void complete_arr (double *arr_in, double *arr_out, const int size) {
 	}	
 }
 
+/*! \fn  sinft (double *y, complex<double> *rbuffer, const int size)
+ * \brief   : Is the function in charge to realize the sine transform the one that you can obtain with  equatio F_k = \sum_{j=1}^{N-1}f_j sin(\pi  j k/N)
+ * \details : 
+ * \param : "size" is the size of the array.
+ * \param : "*y" is a pointer towards an array that has to be of a size power of two.
+ * \param : "*rbuffer" is a pointer towards an array where is going to return the cosine transform into other array of complex numbers.
+ */
 void sinft (double *y, complex<double> *rbuffer, const int size){
 	int j,n=size;
 	double sum,y1,y2,theta,wi=0.0,wr=1.0,wpi,wpr,wtemp;
@@ -50,7 +74,7 @@ void sinft (double *y, complex<double> *rbuffer, const int size){
 		y[n-j]=y1-y2;
 	}
 	//complex<double> *retbuffer = (complex<double>*) malloc((0.5*n+1)*sizeof(complex<double>));
-	fft_west(size, y, rbuffer);
+	fft_west(size, y, rbuffer);//do the fast fourier transform
 	
 	rbuffer[0] = complex<double> (0.5*real(rbuffer[j]),0);
 

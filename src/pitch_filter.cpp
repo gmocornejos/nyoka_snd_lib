@@ -10,6 +10,20 @@
 
 using namespace std;
 
+/** \fn encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate).
+ * The function the function choose a centroid and does window as a bell of Gantt,whit this one 
+ * values all the points ariund the centroid and does the point if greatest amplitude pitch and 
+ * the point of less aplitude unpitc,with this made groups around,start to calculate the news centroids 
+ * using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations,
+ * chages the size of the window exponentially dependin of the increment.
+ * is chosen the size of the window with more distance between the centroids
+ * \param : *buffer is a pointer towards array where de decoder song is saves.
+ * \param : percent is percent od samples per second.
+ * \param : increment is the increment and is given exponentially.
+ * \param : smpls_num is the number of total samples and is equal to size of buffer.
+ * \param : smpls_rate is the number of samples per second.
+ */
+
 // Recommended values: percent ~0.1 increment ~.45
 void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percent, double increment){
 
@@ -99,7 +113,7 @@ void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percen
 					result[i] = UNPITCH;
 				}
 			}
-			witeration++;
+			increment++;
 		}
 	}
 

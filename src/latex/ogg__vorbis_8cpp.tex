@@ -1,0 +1,183 @@
+\hypertarget{ogg__vorbis_8cpp}{\section{ogg\-\_\-vorbis.\-cpp File Reference}
+\label{ogg__vorbis_8cpp}\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vorbis/vorbisenc.\-h$>$}\\*
+{\ttfamily \#include $<$vorbis/vorbisfile.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ogg__vorbis_8cpp_ada74e7db007a68e763f20c17f2985356}{R\-E\-A\-D}~1000000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ogg__vorbis_8cpp_aebaab140e24e6a92b112674b0100443e}{samples\-\_\-number} (const char $\ast$fname)
+\begin{DoxyCompactList}\small\item\em The function receives a pointer towards to the name of the archive thar has to be .ogg and return the number of tatal samples. \end{DoxyCompactList}\item 
+double \hyperlink{ogg__vorbis_8cpp_ab5d694af3f62e73520d6de7b2f052440}{total\-\_\-time} (const char $\ast$fname)
+\begin{DoxyCompactList}\small\item\em The function receives a pointer towards to the name of the archive thar has to be .ogg and return the time of the song in seconds. \end{DoxyCompactList}\item 
+double \hyperlink{ogg__vorbis_8cpp_ab862a1e3b82485f6da91ec7d2e0c3497}{samples\-\_\-rate} (const char $\ast$fname)
+\begin{DoxyCompactList}\small\item\em The function receives a pointer towards to the name of the archive thar has to be .ogg and return the samples for second. \end{DoxyCompactList}\item 
+long \hyperlink{ogg__vorbis_8cpp_a6479e15292876c7527fce3d6b211b9c9}{decode} (const char $\ast$fname, double $\ast$buffer, int smpls\-\_\-num)
+\begin{DoxyCompactList}\small\item\em The functiondecodes the song in a real array and send it to buffer this need the file are monochannel sound and be a .ogg. \end{DoxyCompactList}\item 
+void \hyperlink{ogg__vorbis_8cpp_a5cb5a365a72ca8ce9cf56582140dbec0}{encoder} (const char $\ast$outfilename, double $\ast$inbuffer, int smpls\-\_\-num, double smpls\-\_\-rate)
+\begin{DoxyCompactList}\small\item\em The function is the inverce to decoder this convert a array in a file .ogg using pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ogg__vorbis_8cpp_ada74e7db007a68e763f20c17f2985356}{\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}!R\-E\-A\-D@{R\-E\-A\-D}}
+\index{R\-E\-A\-D@{R\-E\-A\-D}!ogg_vorbis.cpp@{ogg\-\_\-vorbis.\-cpp}}
+\subsubsection[{R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-A\-D~1000000}}\label{ogg__vorbis_8cpp_ada74e7db007a68e763f20c17f2985356}
+
+
+Definition at line 10 of file ogg\-\_\-vorbis.\-cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ogg__vorbis_8cpp_a6479e15292876c7527fce3d6b211b9c9}{\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}!decode@{decode}}
+\index{decode@{decode}!ogg_vorbis.cpp@{ogg\-\_\-vorbis.\-cpp}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}decode (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname, }
+\item[{double $\ast$}]{buffer, }
+\item[{int}]{smpls\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{ogg__vorbis_8cpp_a6479e15292876c7527fce3d6b211b9c9}
+
+
+The functiondecodes the song in a real array and send it to buffer this need the file are monochannel sound and be a .ogg. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \-:} & $\ast$buffer is a pointer towards array where de decoder song are sent. \\
+\hline
+{\em \-:} & $\ast$fname is a pointer towards the fist letter to the archive song. \\
+\hline
+{\em \-:} & smpls\-\_\-num is the number of total samples and is equal to size of buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of samples read 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file ogg\-\_\-vorbis.\-cpp.
+
+\hypertarget{ogg__vorbis_8cpp_a5cb5a365a72ca8ce9cf56582140dbec0}{\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}!encoder@{encoder}}
+\index{encoder@{encoder}!ogg_vorbis.cpp@{ogg\-\_\-vorbis.\-cpp}}
+\subsubsection[{encoder}]{\setlength{\rightskip}{0pt plus 5cm}encoder (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{outfilename, }
+\item[{double $\ast$}]{inbuffer, }
+\item[{int}]{smpls\-\_\-num, }
+\item[{double}]{smpls\-\_\-rate}
+\end{DoxyParamCaption}
+)}}\label{ogg__vorbis_8cpp_a5cb5a365a72ca8ce9cf56582140dbec0}
+
+
+The function is the inverce to decoder this convert a array in a file .ogg using pointers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \-:} & $\ast$outfilename is pointer toward the first letter to file where send the array once encoder \\
+\hline
+{\em \-:} & $\ast$inbuffer is a pointer to the array whit the song decoder or the file you want to convert. \\
+\hline
+{\em \-:} & $\ast$fname is a pointer towards the fist letter to the archive song. \\
+\hline
+{\em \-:} & smpls\-\_\-num is the number of total samples and is equal to size of buffer. \\
+\hline
+{\em \-:} & smpls\-\_\-rate is the number of samples per second.\\
+\hline
+\end{DoxyParams}
+The function the function choose a centroid and does window as a bell of Gantt,whit this one values all the points ariund the centroid and does the point if greatest amplitude pitch and the point of less aplitude unpitc,with this made groups around,start to calculate the news centroids using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations, chages the size of the window exponentially dependin of the increment. is chosen the size of the window with more distance between the centroids 
+\begin{DoxyParams}{Parameters}
+{\em \-:} & $\ast$buffer is a pointer towards array where de decoder song is saves. \\
+\hline
+{\em \-:} & percent is percent od samples per second. \\
+\hline
+{\em \-:} & increment is the increment and is given exponentially. \\
+\hline
+{\em \-:} & smpls\-\_\-num is the number of total samples and is equal to size of buffer. \\
+\hline
+{\em \-:} & smpls\-\_\-rate is the number of samples per second. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file ogg\-\_\-vorbis.\-cpp.
+
+\hypertarget{ogg__vorbis_8cpp_aebaab140e24e6a92b112674b0100443e}{\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}!samples\-\_\-number@{samples\-\_\-number}}
+\index{samples\-\_\-number@{samples\-\_\-number}!ogg_vorbis.cpp@{ogg\-\_\-vorbis.\-cpp}}
+\subsubsection[{samples\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}samples\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname}
+\end{DoxyParamCaption}
+)}}\label{ogg__vorbis_8cpp_aebaab140e24e6a92b112674b0100443e}
+
+
+The function receives a pointer towards to the name of the archive thar has to be .ogg and return the number of tatal samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \-:$\ast$fname} & is a pointer towards the fist letter to the archive song. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of samples in total song. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file ogg\-\_\-vorbis.\-cpp.
+
+\hypertarget{ogg__vorbis_8cpp_ab862a1e3b82485f6da91ec7d2e0c3497}{\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}!samples\-\_\-rate@{samples\-\_\-rate}}
+\index{samples\-\_\-rate@{samples\-\_\-rate}!ogg_vorbis.cpp@{ogg\-\_\-vorbis.\-cpp}}
+\subsubsection[{samples\-\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}samples\-\_\-rate (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname}
+\end{DoxyParamCaption}
+)}}\label{ogg__vorbis_8cpp_ab862a1e3b82485f6da91ec7d2e0c3497}
+
+
+The function receives a pointer towards to the name of the archive thar has to be .ogg and return the samples for second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \-:$\ast$fname} & is a pointer towards the fist letter to the archive song. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The samples for second of the song. 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file ogg\-\_\-vorbis.\-cpp.
+
+\hypertarget{ogg__vorbis_8cpp_ab5d694af3f62e73520d6de7b2f052440}{\index{ogg\-\_\-vorbis.\-cpp@{ogg\-\_\-vorbis.\-cpp}!total\-\_\-time@{total\-\_\-time}}
+\index{total\-\_\-time@{total\-\_\-time}!ogg_vorbis.cpp@{ogg\-\_\-vorbis.\-cpp}}
+\subsubsection[{total\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}total\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname}
+\end{DoxyParamCaption}
+)}}\label{ogg__vorbis_8cpp_ab5d694af3f62e73520d6de7b2f052440}
+
+
+The function receives a pointer towards to the name of the archive thar has to be .ogg and return the time of the song in seconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \-:$\ast$fname} & is a pointer towards the fist letter to the archive song. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total time in seconds song. 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file ogg\-\_\-vorbis.\-cpp.
+

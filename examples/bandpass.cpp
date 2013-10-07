@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 	}
 
 	double *bandbuff = (double*) malloc(smpls_num*sizeof(double));
-	bandpass(smpls_num, smpls_rate, buffer, bandbuff, lowfreq, highfreq);
+	bandpass(smpls_num, smpls_rate, buffer, bandbuff, lowfreq, highfreq);//calculate the band pass of buffer and sent this in bandbuff 
 	free(buffer);
 
 	complex<double> *fftbuff = (complex<double>*) malloc((0.5*smpls_num +1)*sizeof(complex<double>));
