@@ -6,7 +6,11 @@
 #include <fftwest.hh>
 
 using namespace std;	
-
+/*! \fn  get_array_lenght (double *arr, const int size)
+ * \brief The function found the highest closest number to the size of the array 
+ * \param size is the size of the array 
+ * \return number result: Is the number power of two closest and bigger than size  .
+ */
 int get_array_lenght (double *arr, const int size) {	
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
@@ -17,7 +21,12 @@ int get_array_lenght (double *arr, const int size) {
 	}
 	return array_lenght;
 }
-
+ /*! \fn  complete_arr (double *arr_in, double *arr_out, const int size)
+ * \brief This function fill an array power of two with other smaller or equal array and with zeros in extra spaces  
+ * \param : "*arr_in" is a pointer  towards the smallest array with which will fill the biggest array. 
+ * \param : "*arr_out" is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros.
+ * \param : "size" is the size of the smaller array .
+ */
 void complete_arr (double *arr_in, double *arr_out, const int size) {
 	int array_lenght = get_array_lenght(arr_in, size);
 	
@@ -31,6 +40,12 @@ void complete_arr (double *arr_in, double *arr_out, const int size) {
 	}	
 }
 
+/*! \fn  sinft (double *y, complex<double> *rbuffer, const int size)
+ * \brief  :Is the function in charge to realize the sine transform the one that you can obtain with  equatio F_k = \sum_{j=1}^{N-1}f_j sin(\pi  j k/N)
+ * \param : "size" is the size of the array.
+ * \param : "*y" es el puntero con el vector que ingresa el cual debe ser de un tamaño potencia de dos.
+ * \param : rbuffer es el vector donde se va a debolver el arreglo solo se nesecita el espacio en memoria no es nesesario que este inicializado.
+  */
 void sinft (double *y, complex<double> *rbuffer, const int size){
 	int j,n=size;
 	double sum,y1,y2,theta,wi=0.0,wr=1.0,wpi,wpr,wtemp;

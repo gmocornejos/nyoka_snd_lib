@@ -1,4 +1,4 @@
-#include <stdlib.h>
+ #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
@@ -14,6 +14,14 @@
 //returns the total number of samples in file
 //if file is not in the same directory of executable then fname
 // should include PATH
+
+
+
+/*! \fn samples_number(const char *fname)
+ * \brief The function  receives a pointer towards to the name of the archive thar has to be .ogg and return the number of tatal samples 
+ * \param :*fname is  a pointer towards the fist letter to the archive song.
+ * \return The number of samples in total song.
+*/
 int samples_number(const char *fname){
 	//initialize vorbis environment
 	OggVorbis_File vf;
@@ -24,7 +32,11 @@ int samples_number(const char *fname){
 	ov_clear(&vf);
 	return smpls_num;
 }
-
+/*! \fn total_time(const char *fname)
+ * \brief The function  receives a pointer towards to the name of the archive thar has to be .ogg and return the time of the song in seconds 
+ * \param :*fname is  a pointer towards the fist letter to the archive song.
+ * \return The total time in seconds song.
+*/
 double total_time(const char *fname){
 	//initialize vorbis environment
         OggVorbis_File vf;
@@ -35,7 +47,11 @@ double total_time(const char *fname){
 	ov_clear(&vf);
 	return total_tm;
 }
-
+/*! \fn samples_rate(const char *fname)
+ * \brief The function  receives a pointer towards to the name of the archive thar has to be .ogg and return the samples for second
+ * \param :*fname is  a pointer towards the fist letter to the archive song.
+ * \return The samples for second of the song.
+*/
 double samples_rate(const char *fname){
 	//initialize vorbis environment
         OggVorbis_File vf;
@@ -46,7 +62,14 @@ double samples_rate(const char *fname){
 	ov_clear(&vf);
 	return smpls_rate;
 }
-
+/*! \fn decode(const char *fname, double *buffer, int smpls_num)
+ * \brief The functiondecodes the song in a real array and send it to buffer.
+ * \param : *buffer is a pointer towards array where de decoder song is saves.
+ * \param : *fname is  a pointer towards the fist letter to the archive song.
+ * \param : smpls_num is the number of total samples and is equal to size of buffer.
+ * \return xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ */
+// de datos a archivo  
 long decode(const char *fname, double *buffer, int smpls_num){
 	//initialize vorbis environment
 	OggVorbis_File vf;
@@ -54,7 +77,7 @@ long decode(const char *fname, double *buffer, int smpls_num){
         ov_open(file, &vf, NULL, 0);
 	
 	int current_section;
-	float **tempbuff;
+	float **tempbuff;//pequeño y se grega a arreglo total
 	long read = 0; long ret = 1;
 	while(ret != 0){
 		ret = ov_read_float(&vf, &tempbuff, smpls_num, &current_section);
@@ -70,11 +93,15 @@ long decode(const char *fname, double *buffer, int smpls_num){
 
 
 
-
-
 /******************* ENCODER FUNCTIONS *************************/
 
-
+/** \fn encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate).
+ * \brief The function  
+ * \param : *buffer is a pointer towards array where de decoder song is saves.
+ * \param : *fname is  a pointer towards the fist letter to the archive song.
+ * \param : smpls_num is the number of total samples and is equal to size of buffer.
+ */
+//codificarlo comprime el acrchivo y empaquetarlo 
 void encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate){
 	//Creates a file to work with
 	FILE* file = fopen(outfilename, "w");
