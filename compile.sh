@@ -6,7 +6,9 @@
 cd src
 echo "Compiling src"
 make
+
 cd ../examples
 echo "Compiling examples"
 make
-echo "Done"
+
+echo "Done."
