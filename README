@@ -61,7 +61,7 @@ REQUIREMENTS
 
 	- To decode/encode Nyoka needs the ogg and vorbis library.
 	both are include in external_libraries directory. To install
-	ogg open a terminal and enter to nyonka_snd_lib/external_libraries/libogg-version 
+	ogg open a terminal and enter to nyoka_snd_lib/external_libraries/libogg-version 
 	(current version: 1.3.1) and make:
 		$ ./configure
 		$ make
@@ -83,7 +83,7 @@ REQUIREMENTS
 COMPILING
 
 	A compiling script can be found in main directory. To run it 
-you first need to change it's premissions in order to make it executable. 
+you first need to change it's permissions in order to make it executable. 
 This can be done by opening the library directory in a terminal and typing :
 
 	$ chmod u+x compile.sh
@@ -92,16 +92,17 @@ Next, to compile the whole library you can make:
 
 	$ ./compile.sh
 
-To compile you need to have installed in you sistem the requirement
+To compile you need to have installed in you system the requirement
 listed above, the g++ compiler and the pkg-config utility. To do so 
-you can open a terminal and type (assuming you are using debian or a
-derivate):
+you can open a terminal and type (assuming you are using debian or any of
+it's variants):
+
 	$ sudo apt-get install g++
 	$ sudo apt-get install pkg-config	
 	
 Pkg-config is an utility to make easier finding headers and .so 
 (shared objects) of libraries while compiling. 
-Although Nyoka_snd_lib do no install anything in your sistems it relies
+Although Nyoka_snd_lib do no install anything in your systems it relies
 in other libraries and needs this utility to find them. 
  
 ====================================================================
@@ -112,7 +113,7 @@ USING
 which can be found in build directory. To use the library you need to
 include the right headers in you source code and, while compiling your
 program, you need to link with the corresponding object file. 
-	You can look in examples directory to check the implementation
+	You can look in examples directory to check up the implementation
 and compiling process. Next is a brief explanation:
 
 	Take for example the decoder.cpp program, which is in examples
@@ -128,7 +129,7 @@ compiler you should read it's documentation about including headers)
 The above command tells g++ to compile (-c) decoder.cpp, and let it knows
 where to find the requiere headers, -I stands for include and next is 
 the relative path. 
-	Once compiled you need to create a executable file. 
+	Once compiled you need to create an executable file. 
 
 	$ g++ -o decoder.exe decoder.o ../build/plot.o $(VORBIS)
 
@@ -136,7 +137,8 @@ This indicates g++ to create an executable output file (-o decoder.exe)
 using the compiled source from decoder.o (the program we just compiled above)
 and ../build/plot.o, a compiled object from Nyoka_snd_lib. The $(VORBIS)
 stuff is just a variable, while running it is replaced by it's content,
-in this case the first line of examples/makefile.
+in this case the first line of examples/makefile. Basically decoder.exe contains
+the binary code from decoder.o, plot.o and vorbis library. 
   
 	Now you have an executable file that integrates the compiled
 source of your program and Nyoka sound library. 

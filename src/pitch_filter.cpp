@@ -112,7 +112,7 @@ void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percen
 					result[i] = UNPITCH;
 				}
 			}
-			increment++;
+			witeration++;
 		}
 	}
 
