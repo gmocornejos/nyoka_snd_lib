@@ -19,7 +19,8 @@
 
 \section{Introduction}
 
-The developed project is a digital audio signal processing library. Digital signal processing (DSP) is the mathematical manipulation of an information signal to modify or improve it in some way. It is characterized by the representation of discrete time and discrete frequency by a sequence of numbers and the processing of these signals. This library works with sound signals, specifically mono-stereo files with ogg container and vorbis codec. 
+The developed project is a digital audio signal processing library. Digital signal processing (DSP) is the mathematical manipulation of an information signal to modify or improve it in some way. It is characterized by the representation of discrete time and discrete frequency by a sequence of numbers and the processing of these signals. This library works with sound signals, specifically mono-stereo files with ogg container and vorbis codec.\\
+Further information at https://github.com/gmocornejos/nyoka\_snd\_lib/wiki.
 
 \section{Background}
 The earliest example of digital processing was probably in the 25th century BC. The Nile was the main source Egypt, however it's floods were a capricious meteorological phenomenon. The floods od the Nile were recorded by an array of measuring stations called "nilometers"; teh resulting data is considered a full-fledge digital signal defined on a time base of twelve months.\\
@@ -64,7 +65,12 @@ Similary, the discrete inverse Fourier transform is the following:
 	h_k= \frac{1}{N} 	\sum_{k=0}^{N-1} H_n e^{-2\pi i k n /N}
 \end{align}
 The methods used to compute de discrete Fourirer transform until 1960 showed that this transform is a $O(N^2)$ process; this is, in fact, amazingly immense. Danielson and Lanzcson rediscovered in 1942 a derivations of the algorithm latter called \textbf{fast Fourier transform}, that is in ther order of $O(N log_2 N)$ (independently discovered by Gauss in 1805). \\
-The fast Fourier Transform's algorithm states that a transform length $N$ can be written as the summ of two length $N/2$ transforms, one with the odd-numbered points and the other with the even-numbered ones. This can be used recursively, the $N/2$ even-numbered transform can be reduced to a $N/4$ odd-numbered data and a $N/4$ even-numbered data. If $N$ is a power of 2, this can be continuosly applied until the data is subdivided to transforms of length one.\\ 
+The \textit{Danielson-Lannczon lemma} states that a transform length $N$ can be written as the summ of two length $N/2$ transforms, one with the odd-numbered points and the other with the even-numbered ones:
+\begin{align}
+F_k=\sum_{j=0}^{N-1}e^{2\pi jk/N}f_j= \sum_{j=0}^{\frac{N}{2}-1}e^{2\pi ijk/(N/2)}f_{2j}+W_k \sum_{j=0}^{\frac{N}{2}-1}e^{2\pi ijk/(N/2)}f_{2j+1}
+\end{align}
+Where $W$ is a complex number whose discrete Fourier transform is  $H_n=\sum_{k=0}^{N-1}W^{nk}h_k$.\\ 
+This can be used recursively, the $N/2$ even-numbered transform can be reduced to a $N/4$ odd-numbered data and a $N/4$ even-numbered data. If $N$ is a power of 2, this can be continuosly applied until the data is subdivided to transforms of length one.\\ 
 Bit reversal reordering is the methot used to figure out wich $n$ corresponds to a even or odd tranform. The algorithm combines adjacent pairs to get two-point transforms, and so on, until the first and second halves of the whole data set are combined into the final transform.\\
 Then the final algorithm sorts the data into bit reverse order, then applies transforms of all de power 2 lengths until N, for each stage  two inner loops oscillate over the elements of each transform and the subtransforms alredy computed.
 
@@ -139,26 +145,26 @@ A band-pass combines a high and low pass filter.
 
 \section{Installing}
 \subsection{Requierements}
-To plot you need to install gnuplot. For ubuntu/debian:
+To plot gnuplot is nedeed. For ubuntu/debian:
 \begin{center}
 \$ sudo apt-get install gnuplot\\
 \end{center}
-To decode or encode the library needs the ogg and vorbis external library. Both are include in external\_libraries directory. To install ogg, open a terminal, enter to nyonka\_snd\_lib/external\_libraries/libogg-version and make:
+To decode or encode the library needs the ogg and vorbis external library. Both are included in external\_libraries directory. To install ogg, open a terminal, enter to nyonka\_snd\_lib/external\_libraries/libogg-version and type:
 \begin{center}
 	\$ ./configure\\
 	\$ make\\
 	\$ sudo make install
 \end{center}
 \subsection{Compiling}
-A compiling script can be found in main directory. To run it you first need to change it's premissions in order to make it executable. This can be done by opening the library directory in a terminal and typing:
+A compiling script can be found in main directory. To run it may be needed to change it's premissions in order to make it executable. This can be done by opening the library directory in a terminal and typing:
 \begin{center}
 	\$ chmod u+x compile.sh
 \end{center}
-Next, to compile the whole library you can make:
+Next, to compile the whole library can be done by:
 \begin{center}
 	\$ ./compile.sh
 \end{center}
-To compile you need to have installed in you sistem the requirement listed above, the g++ compiler and the pkg-config utility. To do so you can open a terminal and type (assuming you are using debian or a derivate):
+To compile the library is needed to install the requirement listed above, the g++ compiler and the pkg-config utility. To do so you can open a terminal and type (assuming you are using debian or a derivate):
 \begin{center}
 	\$ sudo apt-get install g++\\
 	\$ sudo apt-get install pkg-config	
@@ -166,7 +172,7 @@ To compile you need to have installed in you sistem the requirement listed above
 Pkg-config is an utility to make easier finding headers and .so (shared objects) of libraries while compiling. Although Nyoka\_snd\_lib do no install anything in your sistems it reliesin other libraries and needs this utility to find them. 
 
 \section{Using}
-You use the library as follows. See Figure 1.
+You may use the library as follows. See Figure 1.
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{diagrama_nyoka__1_.jpg}
