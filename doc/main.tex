@@ -84,7 +84,7 @@ y_j=\sin(j\pi /N)(f_j-f_{N-j})+\frac{1}{2}(f_j-f_{N-j})
 \end{align}
 Applying fast Fourier transform to $y_j$ and after a bit of algebra, the real and imaginary part are given by:
 \begin{align}
-R_k=\sum_{j=0}^{N-1}y_j\cos(2\pi jk/N)=F_{2k+1}-F-{2k-1}\\
+R_k=\sum_{j=0}^{N-1}y_j\cos(2\pi jk/N)=F_{2k+1}-F_{2k-1}\\
 I_k=\sum_{j=0}^{N-1}y_j\sin(2\pi jk/N)=F_{2k}
 \end{align}
 The sine transform is its own inverse, if applied twice the return array is the original one multiplied by a factor  of $N/2$.

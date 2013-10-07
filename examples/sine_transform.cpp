@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
 	long smpls_read = decode(fname, buffer, smpls_num);
 	cout << "smpls_read " << smpls_read << "\n";
 	
-	int tam = get_array_lenght(buffer, smpls_num);
+	int tam = get_array_lenght(smpls_num);
 	cout << "new size " << tam << "\n";
 	
 	double *abuffer = (double*)malloc(tam*sizeof(double));
@@ -35,7 +35,6 @@ int main(int argc, char *argv[]){
 	sinft(abuffer,plot_buff,tam);
 
 	free(abuffer);
-	cout << "llega aqui " << "\n";
 	
 	plot_freq(plot_buff, tam, smpls_rate);
 
