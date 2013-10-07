@@ -6,7 +6,7 @@
 #include <fftwest.hh>
 
 using namespace std;	
-<<<<<<< HEAD
+
 /*! \fn  get_array_lenght (double *arr, const int size)
  * \brief The function found the highest closest number to the size of the array 
  * \param size is the size of the array 
@@ -14,7 +14,7 @@ using namespace std;
  */
  
 
-=======
+
 
 int get_array_lenght (const int size) {	
 >>>>>>> c9ff48693d872e4de93dbd7f8c40c74cce94b2e7
