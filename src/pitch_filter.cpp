@@ -11,7 +11,7 @@
 using namespace std;
 
 /** \fn encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate).
- * The function the function choose a centroid and does window as a bell of Gantt,whit this one 
+ * The function the function choose a centroid and does window as a bell of Hann,whit this one 
  * values all the points ariund the centroid and does the point if greatest amplitude pitch and 
  * the point of less aplitude unpitc,with this made groups around,start to calculate the news centroids 
  * using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations,

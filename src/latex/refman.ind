@@ -7,7 +7,7 @@
 
   \item {complete\discretionary {-}{}{}\_\discretionary {-}{}{}arr}
     \subitem {cosft.\discretionary {-}{}{}cpp}, \hyperpage{3}
-    \subitem {sinft.\discretionary {-}{}{}cpp}, \hyperpage{11}
+    \subitem {sinft.\discretionary {-}{}{}cpp}, \hyperpage{10}
   \item {cosft}
     \subitem {cosft.\discretionary {-}{}{}cpp}, \hyperpage{4}
   \item {cosft.\discretionary {-}{}{}cpp}, \hyperpage{3}
@@ -27,28 +27,28 @@
 
   \item {encoder}
     \subitem {ogg\discretionary {-}{}{}\_\discretionary {-}{}{}vorbis.\discretionary {-}{}{}cpp}, 
-		\hyperpage{8}
+		\hyperpage{7}
 
   \indexspace
 
   \item {fft\discretionary {-}{}{}\_\discretionary {-}{}{}west}
-    \subitem {fftwest.\discretionary {-}{}{}cpp}, \hyperpage{5}
+    \subitem {fftwest.\discretionary {-}{}{}cpp}, \hyperpage{4}
   \item {fftwest.\discretionary {-}{}{}cpp}, \hyperpage{4}
     \subitem {fft\discretionary {-}{}{}\_\discretionary {-}{}{}west}, 
-		\hyperpage{5}
+		\hyperpage{4}
     \subitem {ifft\discretionary {-}{}{}\_\discretionary {-}{}{}west}, 
-		\hyperpage{5}
+		\hyperpage{4}
   \item {freqfilters.\discretionary {-}{}{}cpp}, \hyperpage{5}
     \subitem {bandpass}, \hyperpage{5}
     \subitem {highpass}, \hyperpage{5}
-    \subitem {lowpass}, \hyperpage{6}
+    \subitem {lowpass}, \hyperpage{5}
     \subitem {P\discretionary {-}{}{}I}, \hyperpage{5}
 
   \indexspace
 
   \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}array\discretionary {-}{}{}\_\discretionary {-}{}{}lenght}
     \subitem {cosft.\discretionary {-}{}{}cpp}, \hyperpage{4}
-    \subitem {sinft.\discretionary {-}{}{}cpp}, \hyperpage{11}
+    \subitem {sinft.\discretionary {-}{}{}cpp}, \hyperpage{10}
 
   \indexspace
 
@@ -58,12 +58,12 @@
   \indexspace
 
   \item {ifft\discretionary {-}{}{}\_\discretionary {-}{}{}west}
-    \subitem {fftwest.\discretionary {-}{}{}cpp}, \hyperpage{5}
+    \subitem {fftwest.\discretionary {-}{}{}cpp}, \hyperpage{4}
 
   \indexspace
 
   \item {lowpass}
-    \subitem {freqfilters.\discretionary {-}{}{}cpp}, \hyperpage{6}
+    \subitem {freqfilters.\discretionary {-}{}{}cpp}, \hyperpage{5}
 
   \indexspace
 
@@ -73,9 +73,9 @@
   \indexspace
 
   \item {ogg\discretionary {-}{}{}\_\discretionary {-}{}{}vorbis.\discretionary {-}{}{}cpp}, 
-		\hyperpage{7}
+		\hyperpage{6}
     \subitem {decode}, \hyperpage{7}
-    \subitem {encoder}, \hyperpage{8}
+    \subitem {encoder}, \hyperpage{7}
     \subitem {R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D}, 
 		\hyperpage{7}
     \subitem {samples\discretionary {-}{}{}\_\discretionary {-}{}{}number}, 
@@ -83,7 +83,7 @@
     \subitem {samples\discretionary {-}{}{}\_\discretionary {-}{}{}rate}, 
 		\hyperpage{8}
     \subitem {total\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
-		\hyperpage{9}
+		\hyperpage{8}
 
   \indexspace
 
@@ -96,23 +96,23 @@
 		\hyperpage{9}
   \item {pitch\discretionary {-}{}{}\_\discretionary {-}{}{}filter}
     \subitem {pitch\discretionary {-}{}{}\_\discretionary {-}{}{}filter.\discretionary {-}{}{}cpp}, 
-		\hyperpage{10}
-  \item {pitch\discretionary {-}{}{}\_\discretionary {-}{}{}filter.\discretionary {-}{}{}cpp}, 
 		\hyperpage{9}
+  \item {pitch\discretionary {-}{}{}\_\discretionary {-}{}{}filter.\discretionary {-}{}{}cpp}, 
+		\hyperpage{8}
     \subitem {P\discretionary {-}{}{}I}, \hyperpage{9}
     \subitem {P\discretionary {-}{}{}I\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}H}, 
 		\hyperpage{9}
     \subitem {pitch\discretionary {-}{}{}\_\discretionary {-}{}{}filter}, 
-		\hyperpage{10}
+		\hyperpage{9}
     \subitem {U\discretionary {-}{}{}N\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}H}, 
 		\hyperpage{9}
-  \item {plot.\discretionary {-}{}{}cpp}, \hyperpage{10}
+  \item {plot.\discretionary {-}{}{}cpp}, \hyperpage{9}
     \subitem {plot\discretionary {-}{}{}\_\discretionary {-}{}{}freq}, 
-		\hyperpage{10}
+		\hyperpage{9}
     \subitem {plot\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
 		\hyperpage{10}
   \item {plot\discretionary {-}{}{}\_\discretionary {-}{}{}freq}
-    \subitem {plot.\discretionary {-}{}{}cpp}, \hyperpage{10}
+    \subitem {plot.\discretionary {-}{}{}cpp}, \hyperpage{9}
   \item {plot\discretionary {-}{}{}\_\discretionary {-}{}{}time}
     \subitem {plot.\discretionary {-}{}{}cpp}, \hyperpage{10}
 
@@ -131,19 +131,19 @@
     \subitem {ogg\discretionary {-}{}{}\_\discretionary {-}{}{}vorbis.\discretionary {-}{}{}cpp}, 
 		\hyperpage{8}
   \item {sinft}
-    \subitem {sinft.\discretionary {-}{}{}cpp}, \hyperpage{11}
-  \item {sinft.\discretionary {-}{}{}cpp}, \hyperpage{11}
+    \subitem {sinft.\discretionary {-}{}{}cpp}, \hyperpage{10}
+  \item {sinft.\discretionary {-}{}{}cpp}, \hyperpage{10}
     \subitem {complete\discretionary {-}{}{}\_\discretionary {-}{}{}arr}, 
-		\hyperpage{11}
+		\hyperpage{10}
     \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}array\discretionary {-}{}{}\_\discretionary {-}{}{}lenght}, 
-		\hyperpage{11}
-    \subitem {sinft}, \hyperpage{11}
+		\hyperpage{10}
+    \subitem {sinft}, \hyperpage{10}
 
   \indexspace
 
   \item {total\discretionary {-}{}{}\_\discretionary {-}{}{}time}
     \subitem {ogg\discretionary {-}{}{}\_\discretionary {-}{}{}vorbis.\discretionary {-}{}{}cpp}, 
-		\hyperpage{9}
+		\hyperpage{8}
 
   \indexspace
 
