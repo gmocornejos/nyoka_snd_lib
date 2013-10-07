@@ -46,6 +46,7 @@ void complete_arr (double *arr_in, double *arr_out, const int size) {
  * \param : "*y" is a pointer towards an array that has to be of a size power of two.
  * \param : "*rbuffer" is a pointer towards an array where is going to return the cosine transform into other array of complex numbers.
   */
+  
 void cosft (double *y, complex<double> *rbuffer, const int size){
 	const double PI=3.1415;
 	int j,n=size-1;

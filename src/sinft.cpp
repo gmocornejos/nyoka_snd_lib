@@ -6,12 +6,19 @@
 #include <fftwest.hh>
 
 using namespace std;	
+<<<<<<< HEAD
 /*! \fn  get_array_lenght (double *arr, const int size)
  * \brief The function found the highest closest number to the size of the array 
  * \param size is the size of the array 
  * \return number result: Is the number power of two closest and bigger than size  .
  */
-int get_array_lenght (double *arr, const int size) {	
+ 
+
+=======
+
+int get_array_lenght (const int size) {	
+>>>>>>> c9ff48693d872e4de93dbd7f8c40c74cce94b2e7
+
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
 		if(pow(2, n) >= size){
@@ -28,7 +35,7 @@ int get_array_lenght (double *arr, const int size) {
  * \param : "size" is the size of the smaller array .
  */
 void complete_arr (double *arr_in, double *arr_out, const int size) {
-	int array_lenght = get_array_lenght(arr_in, size);
+	int array_lenght = get_array_lenght(size);
 	
 	for (int c=0; c<array_lenght; c++) {
 		if(c<size){
