@@ -10,9 +10,9 @@ using namespace std;
 int main(int argc, char *argv[]){
 	const char *fname = argv[1];
 
-	int smpls_num = samples_number(fname);
+	int smpls_num = samples_number(fname);//smpls_num is the number of samples in total
 	cout << "samples number " << smpls_num << "\n";
-	double smpls_rate = samples_rate(fname);
+	double smpls_rate = samples_rate(fname);//smpls_rate is the number of samples per second
 	cout << "sample rate " << smpls_rate << "\n";
 
 	double *buffer = (double*)malloc(smpls_num*sizeof(double));

@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
 	long smpls_read = decode(fname, buffer, smpls_num);
 	cout << "smpls_read " << smpls_read << "\n";
 	
-	int tam = get_array_lenght(smpls_num);
+	int tam = get_array_lenght(smpls_num);//tam is the number power of two, highest and closest to smpls_num 
 	cout << "new size " << tam << "\n";
 	
 	double *abuffer = (double*)malloc(tam*sizeof(double));
@@ -32,11 +32,11 @@ int main(int argc, char *argv[]){
 	
 	complex<double> *plot_buff = (complex<double>*) malloc(tam*sizeof(complex<double>));
 	
-	sinft(abuffer,plot_buff,tam);
+	sinft(abuffer,plot_buff,tam);//calculated the sine tranform 
 
 	free(abuffer);
 	
-	plot_freq(plot_buff, tam, smpls_rate);
+	plot_freq(plot_buff, tam, smpls_rate);//generates a graphyc
 
 	free(plot_buff);
 	return 0;

@@ -63,11 +63,11 @@ double samples_rate(const char *fname){
 	return smpls_rate;
 }
 /*! \fn decode(const char *fname, double *buffer, int smpls_num)
- * \brief The functiondecodes the song in a real array and send it to buffer.
- * \param : *buffer is a pointer towards array where de decoder song is saves.
+ * \brief The functiondecodes the song in a real array and send it to buffer this need the file are monochannel sound and be a .ogg.
+ * \param : *buffer is a pointer towards array where de decoder song are sent.
  * \param : *fname is  a pointer towards the fist letter to the archive song.
  * \param : smpls_num is the number of total samples and is equal to size of buffer.
- * \return xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ * \return the number of samples read 
  */
 // de datos a archivo  
 long decode(const char *fname, double *buffer, int smpls_num){
@@ -77,7 +77,7 @@ long decode(const char *fname, double *buffer, int smpls_num){
         ov_open(file, &vf, NULL, 0);
 	
 	int current_section;
-	float **tempbuff;//pequeño y se grega a arreglo total
+	float **tempbuff;
 	long read = 0; long ret = 1;
 	while(ret != 0){
 		ret = ov_read_float(&vf, &tempbuff, smpls_num, &current_section);
@@ -96,10 +96,12 @@ long decode(const char *fname, double *buffer, int smpls_num){
 /******************* ENCODER FUNCTIONS *************************/
 
 /** \fn encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate).
- * \brief The function  
- * \param : *buffer is a pointer towards array where de decoder song is saves.
+ * \brief The function  is the inverce to decoder this convert a array in a file .ogg using pointers
+ * \param : *outfilename is pointer toward the first letter to file where send the array once encoder
+ * \param : *inbuffer is a pointer to the array whit the song decoder or the file you want to convert.
  * \param : *fname is  a pointer towards the fist letter to the archive song.
  * \param : smpls_num is the number of total samples and is equal to size of buffer.
+ * \param  : smpls_rate is the number of samples per second.
  */
 //codificarlo comprime el acrchivo y empaquetarlo 
 void encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate){

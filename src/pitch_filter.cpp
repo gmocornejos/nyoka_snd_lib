@@ -9,6 +9,7 @@
 #define UNPITCH 0
 
 using namespace std;
+
 /** \fn encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate).
  * The function the function choose a centroid and does window as a bell of Gantt,whit this one 
  * values all the points ariund the centroid and does the point if greatest amplitude pitch and 
@@ -22,6 +23,7 @@ using namespace std;
  * \param : smpls_num is the number of total samples and is equal to size of buffer.
  * \param : smpls_rate is the number of samples per second.
  */
+
 // Recommended values: percent ~0.1 increment ~.45
 void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percent, double increment){
 
@@ -37,19 +39,18 @@ void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percen
 		cout << "Progress: " << (i*100)/smpls_num << "%" << "\r";
 		fflush(stdout);
 		double maxdistance = 0;
-	        double c0, c1;//variable centroids 
-		int witeration = 1;//iterracion de la ventana
-		//wsize 
-		for(int wsize = percent*smpls_rate; wsize < smpls_num; wsize = wsize*pow((1 + increment), witeration)){ //mueve todos los puntos de la señal
+	        double c0, c1;
+		int witeration = 1;
+		for(int wsize = percent*smpls_rate; wsize < smpls_num; wsize = wsize*pow((1 + increment), witeration)){
 			// initial centroids
 			double max=0, min=0;
 			double value;
-			for(int j = 0; j < smpls_num; j++){//moverce portodos los tamaños de ventana 
+			for(int j = 0; j < smpls_num; j++){
 				if(j > i-wsize && j < i + wsize){
 					value = buffer[j]*(1 + cos((PI*(j-i))/(2*wsize +1)));
 					if(value > max){
 						max = value;
-					}else if(value < min){// 
+					}else if(value < min){
 						min = value;
 					}
 				}
@@ -72,15 +73,15 @@ void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percen
 				}
 			}
 			// k-means algorithm
-			double tmpc1, tmpc0;//temporales centroide 
-			double num1 = 0, num0 = 0, den1 = 0, den0 = 0; //den1 denominado  num numerador  
+			double tmpc1, tmpc0;
+			double num1 = 0, num0 = 0, den1 = 0, den0 = 0;
 			int k = 0;
 			// Stops when k >= 100 or when the centroids stop moving. 
 			while((k < 100) && !((c1 == tmpc1) && (c0 == tmpc0))){
 				tmpc1 = c1;
 				tmpc0 = c0;
 				// Calc new centroids
-				for(int j = 0; j < smpls_num; j++){//formula 2 y 3
+				for(int j = 0; j < smpls_num; j++){
 					num1 = num1 + classification[j]*buffer[j]*(1 + cos((PI*(j-i))/(2*wsize +1)));
 					den1 = den1 + classification[j]*(1 + cos((PI*(j-i))/(2*wsize +1)));
 					num0 = num0 + (1-classification[j])*buffer[j]*(1 + cos((PI*(j-i))/(2*wsize +1)));
@@ -101,18 +102,18 @@ void pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percen
 					}
 				}
 				k++;
-			}//termino con untamaño de ventana
+			}
 
-			if((c1 - c0) > maxdistance){//max distancia calcula 
+			if((c1 - c0) > maxdistance){
 				maxdistance = c1 - c0;
-				double frac = (buffer[i] - c0)/(maxdistance);//formuala 6
+				double frac = (buffer[i] - c0)/(maxdistance);
 				if(frac > 0.5){
 					result[i] = PITCH;
 				}else{
 					result[i] = UNPITCH;
 				}
 			}
-			witeration++;
+			increment++;
 		}
 	}
 

@@ -23,6 +23,7 @@ int main(int argc, char *argv[]){
 	}
 
 	/*** filter ***/
+	//
 	double percent = 0.1;
 	double increment = 0.45;
 	pitch_filter(smpls_num, smpls_rate, buffer, percent, increment);

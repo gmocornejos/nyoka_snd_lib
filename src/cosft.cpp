@@ -8,7 +8,7 @@
 
 using namespace std;	
 /*! \fn  get_array_lenght (double *arr, const int size)
- * \brief The function found the number poewr of two, highest and closest to the size of the array.  
+ * \brief The function found the number power of two, highest and closest to the size of the array.  
  * \param "size" is the size of the array 
  * \return number result: Is the number power of two closest and bigger than size  .
  */
@@ -41,7 +41,8 @@ void complete_arr (double *arr_in, double *arr_out, const int size) {
 	}	
 } 
 /*! \fn  cosft (double *y, complex<double> *rbuffer, const int size)
- * \brief  :Is the function in charge to realize the cosine transform the one that you can obtain with  equation  f_j = \sum_{k=0}^{n-1} x_k \cos \left[\frac{\pi}{n} j \left(k+\frac{1}{2}\right) \right] 
+ * \brief  :Is the function in charge to realize the cosine transform the one that you can obtain with  equation  $f_j = \sum_{k=0}^{n-1} x_k \cos \left[\frac{\pi}{n} j \left(k+\frac{1}{2}\right) \right]$ 
+ * \details : this funcion is variation of the fast fourier transform,this give the  sum of cosine functions oscillating at different frequencies  from lossy compression of audio and images 
  * \param : "size" is the size of the array.
  * \param : "*y" is a pointer towards an array that has to be of a size power of two.
  * \param : "*rbuffer" is a pointer towards an array where is going to return the cosine transform into other array of complex numbers.

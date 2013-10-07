@@ -1,4 +1,17 @@
 *.o
 *.exe
+*.cpp.3
+*.rtf
+*.log
+*.aux
+*.idx
+*.out
+*.ind 
+*.ilg
+*.sty
+*.toc
+*.png
+*.css
+*.js
 outputdata.txt
 
