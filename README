@@ -38,7 +38,7 @@ extern_libraries. Installing gnuplot is required to plot.
 
 	You can find more information in https://github.com/gmocornejos/nyoka_snd_lib/wiki
 
-This library is organized as follow:
+This library is organized as follows:
 
 	- audiofiles contains files in ogg/vorbis to test the functions.
 	- build stores the compiled object files to link with your program.
