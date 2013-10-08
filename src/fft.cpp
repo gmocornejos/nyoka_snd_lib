@@ -9,7 +9,12 @@
 
 using namespace std;
 
- /** Calculates the necessary bits to store the array indexes **/
+ /*!
+  *  \fn bits_length(int n)
+ * \brief Calculates the necessary bits to store the array indexes
+ * \param n: is number tells how many bits (binary digits) are required to store that number in decimal
+  *  
+  *  **/
 int bits_length(int n){
         int i;
         for(i = 0; n > 1; i++){
@@ -18,7 +23,13 @@ int bits_length(int n){
         return (i+1);
 }
 
-  /** Calculates the bit reversal **/
+  /*! 
+ * \fn bitrev(int num, int bitslength).
+ * \brief The function attenuates only the highest frequencies to a determinated frequency in a wave.
+ * \param  bitslength: the number of bits.
+ * \param  num:is the number you are looking for the bit reverse.
+
+**/
 int bitrev(int num, int bitslength){
         int i, nrev, N;
         N = 1 << bitslength;
@@ -33,7 +44,11 @@ int bitrev(int num, int bitslength){
         return nrev;
 }
 
- /** calculates the next power of two **/
+  /*!
+ * \fn  next_pow_2(int size)
+ *\brief calculates the next power of two .
+ *\param size : is the large of the array .
+ **/
 int next_pow_2(int size){
 	int i = 2;
 	while(i < size){
@@ -42,13 +57,19 @@ int next_pow_2(int size){
 	return i;
 }
 
+ /*!
+ * \fn fft(int smpls_read, double *buffer, complex<double> *transformed).
+ * \brief The function calculated the fast fourier transform
+ * \details FFT requires the array length to be a power of two. The input array contains N complex samples, with real and imaginary part alternating, so the number of samples must be 	multiplied by two
+ * \param  *buffer: is  a pointer towards the array whit the decoded song .
+ * \param  smpls_num: is the number of total samples read.
+ * \param  *transformed: is  a pointer towards the array complex where send the result of the transform.
+  **/
+ 
+	
 void fft(int smpls_read, double *buffer, complex<double> *transformed){
 
 
-	/** FFT requires the array length to be a power of two.
-	The input array contains N complex samples, with real and
-	imaginary part alternating, so the number of samples must be
-	multiplied by two **/
 	int fft_buff_len = next_pow_2(smpls_read*2);
 	// Creates a buffer to store the data
 	double *fft_buff = (double*) malloc(fft_buff_len*sizeof(double));
