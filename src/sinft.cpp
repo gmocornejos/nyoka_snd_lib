@@ -12,12 +12,8 @@ using namespace std;
  * \param size is the size of the array 
  * \return number result: Is the number power of two closest and bigger than size  .
  */
- 
-
-
 
 int get_array_lenght (const int size) {	
-
 
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
