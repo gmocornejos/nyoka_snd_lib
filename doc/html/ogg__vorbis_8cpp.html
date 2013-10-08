@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Digital signal processing: ogg_vorbis.cpp File Reference</title>
+<title>Nyola Sound Library: ogg_vorbis.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,11 +21,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="687474703a2f2f70686f746f73686f70636f6e746573742e636f6d2f696d616765732f6c617267652f78796d773965716470686e693664393967623261636432696f636635393063766b67316f2e6a7067"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Digital signal processing
+   <div id="projectname">Nyola Sound Library
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">is the mathematical manipulation of an information signal to modify or improve it in some way</div>
+   <div id="projectbrief">this is a library for Digital signal processing</div>
   </td>
  </tr>
  </tbody>
@@ -94,9 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;vorbis/vorbisenc.h&gt;</code><br/>
 <code>#include &lt;vorbis/vorbisfile.h&gt;</code><br/>
-</div>
-<p><a href="ogg__vorbis_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ada74e7db007a68e763f20c17f2985356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ogg__vorbis_8cpp.html#ada74e7db007a68e763f20c17f2985356">READ</a>&#160;&#160;&#160;1000000</td></tr>
@@ -130,8 +129,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="ogg__vorbis_8cpp_source.html#l00010">10</a> of file <a class="el" href="ogg__vorbis_8cpp_source.html">ogg_vorbis.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,15 +166,13 @@ Functions</h2></td></tr>
 <p>The functiondecodes the song in a real array and send it to buffer this need the file are monochannel sound and be a .ogg. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>*buffer is a pointer towards array where de decoder song are sent. </td></tr>
-    <tr><td class="paramname">:</td><td>*fname is a pointer towards the fist letter to the archive song. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
+    <tr><td class="paramname">*buffer</td><td>: is a pointer towards array where de decoder song are sent. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the name and direction of the song. </td></tr>
+    <tr><td class="paramname">smpls_num</td><td>: is the number of total samples and is equal to size of buffer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of samples read </dd></dl>
-
-<p>Definition at line <a class="el" href="ogg__vorbis_8cpp_source.html#l00073">73</a> of file <a class="el" href="ogg__vorbis_8cpp_source.html">ogg_vorbis.cpp</a>.</p>
 
 </div>
 </div>
@@ -220,27 +215,25 @@ Functions</h2></td></tr>
 <p>The function is the inverce to decoder this convert a array in a file .ogg using pointers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>*outfilename is pointer toward the first letter to file where send the array once encoder </td></tr>
-    <tr><td class="paramname">:</td><td>*inbuffer is a pointer to the array whit the song decoder or the file you want to convert. </td></tr>
-    <tr><td class="paramname">:</td><td>*fname is a pointer towards the fist letter to the archive song. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_rate is the number of samples per second.</td></tr>
+    <tr><td class="paramname">*outfilename,:</td><td>is pointer toward the first letter to file where send the array once encoder </td></tr>
+    <tr><td class="paramname">*inbuffer,:</td><td>is a pointer to the array whit the song decoder or the file you want to convert. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">smpls_num</td><td>: is the number of total samples and is equal to size of buffer. </td></tr>
+    <tr><td class="paramname">smpls_rate</td><td>: is the number of samples per second.</td></tr>
   </table>
   </dd>
 </dl>
-<p>The function the function choose a centroid and does window as a bell of Gantt,whit this one values all the points ariund the centroid and does the point if greatest amplitude pitch and the point of less aplitude unpitc,with this made groups around,start to calculate the news centroids using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations, chages the size of the window exponentially dependin of the increment. is chosen the size of the window with more distance between the centroids </p>
+<p>The function the function choose a centroid and does window as a bell of Hann,whit this one values all the points ariund the centroid and does the point if greatest amplitude pitch and the point of less aplitude unpitc,with this made groups around,start to calculate the news centroids using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations, chages the size of the window exponentially dependin of the increment. is chosen the size of the window with more distance between the centroids </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>*buffer is a pointer towards array where de decoder song is saves. </td></tr>
-    <tr><td class="paramname">:</td><td>percent is percent od samples per second. </td></tr>
-    <tr><td class="paramname">:</td><td>increment is the increment and is given exponentially. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_rate is the number of samples per second. </td></tr>
+    <tr><td class="paramname">*buffer,:</td><td>is a pointer towards array where de decoder song is saves. </td></tr>
+    <tr><td class="paramname">percent,:</td><td>is percent od samples per second. </td></tr>
+    <tr><td class="paramname">increment,:</td><td>is the increment and is given exponentially. </td></tr>
+    <tr><td class="paramname">smpls_num,:</td><td>is the number of total samples and is equal to size of buffer. </td></tr>
+    <tr><td class="paramname">smpls_rate,:</td><td>is the number of samples per second. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="ogg__vorbis_8cpp_source.html#l00107">107</a> of file <a class="el" href="ogg__vorbis_8cpp_source.html">ogg_vorbis.cpp</a>.</p>
 
 </div>
 </div>
@@ -261,13 +254,11 @@ Functions</h2></td></tr>
 <p>The function receives a pointer towards to the name of the archive thar has to be .ogg and return the number of tatal samples. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:*fname</td><td>is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">*fname,:</td><td>is a pointer towards the name and direction of the song. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of samples in total song. </dd></dl>
-
-<p>Definition at line <a class="el" href="ogg__vorbis_8cpp_source.html#l00025">25</a> of file <a class="el" href="ogg__vorbis_8cpp_source.html">ogg_vorbis.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,13 +279,11 @@ Functions</h2></td></tr>
 <p>The function receives a pointer towards to the name of the archive thar has to be .ogg and return the samples for second. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:*fname</td><td>is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the name and direction of the song. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The samples for second of the song. </dd></dl>
-
-<p>Definition at line <a class="el" href="ogg__vorbis_8cpp_source.html#l00055">55</a> of file <a class="el" href="ogg__vorbis_8cpp_source.html">ogg_vorbis.cpp</a>.</p>
 
 </div>
 </div>
@@ -315,20 +304,18 @@ Functions</h2></td></tr>
 <p>The function receives a pointer towards to the name of the archive thar has to be .ogg and return the time of the song in seconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:*fname</td><td>is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the name and direction of the song. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The total time in seconds song. </dd></dl>
-
-<p>Definition at line <a class="el" href="ogg__vorbis_8cpp_source.html#l00040">40</a> of file <a class="el" href="ogg__vorbis_8cpp_source.html">ogg_vorbis.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 7 2013 10:53:57 for Digital signal processing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 7 2013 20:07:08 for Nyola Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

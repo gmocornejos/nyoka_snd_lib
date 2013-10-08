@@ -14,7 +14,7 @@ int \hyperlink{cosft_8cpp_a0601582e0985c250dd5ae4d36c6d3241}{get\-\_\-array\-\_\
 void \hyperlink{cosft_8cpp_a6d73cffa3835c8d8755dcd51bf9f4b2e}{complete\-\_\-arr} (double $\ast$arr\-\_\-in, double $\ast$arr\-\_\-out, const int size)
 \begin{DoxyCompactList}\small\item\em This function fill an array power of two with other smaller or equal array and with zeros in extra spaces. \end{DoxyCompactList}\item 
 void \hyperlink{cosft_8cpp_a29db2d936a4ca1c607211130f5538f56}{cosft} (double $\ast$y, complex$<$ double $>$ $\ast$rbuffer, const int size)
-\begin{DoxyCompactList}\small\item\em \-:Is the function in charge to realize the cosine transform the one that you can obtain with equation \$f\-\_\-j = \{k=0\}$^\wedge$\{n-\/1\} x\-\_\-k  \mbox{[}\{\}\{n\} j (k+\{1\}\{2\}) \mbox{]}\$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Is the function in charge to realize the cosine transform the one that you can obtain with equation \$f\-\_\-j = \{k=0\}$^\wedge$\{n-\/1\} x\-\_\-k  \mbox{[}\{\}\{n\} j (k+\{1\}\{2\}) \mbox{]}\$. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -33,26 +33,22 @@ This function fill an array power of two with other smaller or equal array and w
 
 
 \begin{DoxyParams}{Parameters}
-{\em \-:} & \char`\"{}$\ast$arr\-\_\-in\char`\"{} is a pointer towards the smallest array with which will fill the biggest array. \\
+{\em $\ast$arr\-\_\-in,\-:} & is a pointer towards the smallest array with which will fill the biggest array. \\
 \hline
-{\em \-:} & \char`\"{}$\ast$arr\-\_\-out\char`\"{} is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. \\
+{\em $\ast$arr\-\_\-out,\-:} & is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. \\
 \hline
-{\em \-:} & \char`\"{}size\char`\"{} is the size of the smaller array .\\
+{\em size,\-:} & is the size of the smaller array .\\
 \hline
 \end{DoxyParams}
 It is equivalent to the imaginary parts of a D\-F\-T of roughly twice the length, is a linear and invertible function 
 \begin{DoxyParams}{Parameters}
-{\em \-:} & \char`\"{}$\ast$arr\-\_\-in\char`\"{} is a pointer towards the smallest array with which will fill the biggest array. \\
+{\em $\ast$arr\-\_\-in,\-:} & is a pointer towards the smallest array with which will fill the biggest array. \\
 \hline
-{\em \-:} & \char`\"{}$\ast$arr\-\_\-out\char`\"{} is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. \\
+{\em $\ast$arr\-\_\-out,\-:} & is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. \\
 \hline
-{\em \-:} & \char`\"{}size\char`\"{} is the size of the smaller array . \\
+{\em size,\-:} & is the size of the smaller array . \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 31 of file cosft.\-cpp.
-
 \hypertarget{cosft_8cpp_a29db2d936a4ca1c607211130f5538f56}{\index{cosft.\-cpp@{cosft.\-cpp}!cosft@{cosft}}
 \index{cosft@{cosft}!cosft.cpp@{cosft.\-cpp}}
 \subsubsection[{cosft}]{\setlength{\rightskip}{0pt plus 5cm}cosft (
@@ -64,21 +60,17 @@ Definition at line 31 of file cosft.\-cpp.
 )}}\label{cosft_8cpp_a29db2d936a4ca1c607211130f5538f56}
 
 
-\-:Is the function in charge to realize the cosine transform the one that you can obtain with equation \$f\-\_\-j = \{k=0\}$^\wedge$\{n-\/1\} x\-\_\-k  \mbox{[}\{\}\{n\} j (k+\{1\}\{2\}) \mbox{]}\$ 
+Is the function in charge to realize the cosine transform the one that you can obtain with equation \$f\-\_\-j = \{k=0\}$^\wedge$\{n-\/1\} x\-\_\-k  \mbox{[}\{\}\{n\} j (k+\{1\}\{2\}) \mbox{]}\$. 
 
-\-: this funcion is variation of the fast fourier transform,this give the sum of cosine functions oscillating at different frequencies from lossy compression of audio and images 
+this funcion is variation of the fast fourier transform,this give the sum of cosine functions oscillating at different frequencies from lossy compression of audio and images 
 \begin{DoxyParams}{Parameters}
-{\em \-:} & \char`\"{}size\char`\"{} is the size of the array. \\
+{\em size,\-:} & is the size of the array. \\
 \hline
-{\em \-:} & \char`\"{}$\ast$y\char`\"{} is a pointer towards an array that has to be of a size power of two. \\
+{\em $\ast$y,\-:} & is a pointer towards an array that has to be of a size power of two. \\
 \hline
-{\em \-:} & \char`\"{}$\ast$rbuffer\char`\"{} is a pointer towards an array where is going to return the cosine transform into other array of complex numbers. \\
+{\em $\ast$rbuffer,\-:} & is a pointer towards an array where is going to return the cosine transform into other array of complex numbers. \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 51 of file cosft.\-cpp.
-
 \hypertarget{cosft_8cpp_a0601582e0985c250dd5ae4d36c6d3241}{\index{cosft.\-cpp@{cosft.\-cpp}!get\-\_\-array\-\_\-lenght@{get\-\_\-array\-\_\-lenght}}
 \index{get\-\_\-array\-\_\-lenght@{get\-\_\-array\-\_\-lenght}!cosft.cpp@{cosft.\-cpp}}
 \subsubsection[{get\-\_\-array\-\_\-lenght}]{\setlength{\rightskip}{0pt plus 5cm}get\-\_\-array\-\_\-lenght (
@@ -103,13 +95,9 @@ number result\-: Is the number power of two closest and bigger than size .
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-{\em size} & is the size of the array \\
+{\em size} & \-: is the size of the array \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 number result\-: Is the number power of two closest and bigger than size . 
 \end{DoxyReturn}
-
-
-Definition at line 15 of file cosft.\-cpp.
-

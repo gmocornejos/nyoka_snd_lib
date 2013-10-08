@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Digital signal processing: noise.cpp File Reference</title>
+<title>Nyola Sound Library: plot.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,11 +21,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="687474703a2f2f70686f746f73686f70636f6e746573742e636f6d2f696d616765732f6c617267652f78796d773965716470686e693664393967623261636432696f636635393063766b67316f2e6a7067"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Digital signal processing
+   <div id="projectname">Nyola Sound Library
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">is the mathematical manipulation of an information signal to modify or improve it in some way</div>
+   <div id="projectbrief">this is a library for Digital signal processing</div>
   </td>
  </tr>
  </tbody>
@@ -83,38 +84,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">noise.cpp File Reference</div>  </div>
+<div class="title">plot.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br/>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &lt;time.h&gt;</code><br/>
-<code>#include &lt;iostream&gt;</code><br/>
-</div>
-<p><a href="noise_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &lt;fstream&gt;</code><br/>
+<code>#include &lt;complex&gt;</code><br/>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5e84ca81ad790387db0c730a5e51c420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="noise_8cpp.html#a5e84ca81ad790387db0c730a5e51c420">whitenoise</a> (int smpls_num, double *buffer)</td></tr>
-<tr class="memdesc:a5e84ca81ad790387db0c730a5e51c420"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function fill a pointer with aleatoriis random numbers which when they join the song they can be seen like noisy.  <a href="#a5e84ca81ad790387db0c730a5e51c420">More...</a><br/></td></tr>
-<tr class="separator:a5e84ca81ad790387db0c730a5e51c420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d593d658609edc1e8189750382e622"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot_8cpp.html#ac5d593d658609edc1e8189750382e622">plot_time</a> (double *buffer, int smpls_read, double smpls_rate)</td></tr>
+<tr class="separator:ac5d593d658609edc1e8189750382e622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58423964b8c9fa412acea18d6113850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot_8cpp.html#ab58423964b8c9fa412acea18d6113850">plot_freq</a> (complex&lt; double &gt; *buffer, int smpls_read, double smpls_rate)</td></tr>
+<tr class="separator:ab58423964b8c9fa412acea18d6113850"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a5e84ca81ad790387db0c730a5e51c420"></a>
+<a class="anchor" id="ab58423964b8c9fa412acea18d6113850"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">whitenoise </td>
+          <td class="memname">void plot_freq </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>smpls_num</em>, </td>
+          <td class="paramtype">complex&lt; double &gt; *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>buffer</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>smpls_read</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>smpls_rate</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -124,23 +130,44 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The function fill a pointer with aleatoriis random numbers which when they join the song they can be seen like noisy. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">:</td><td>*buffer is a pointer towards an array where is going to return the ramdon numbers. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="noise_8cpp_source.html#l00012">12</a> of file <a class="el" href="noise_8cpp_source.html">noise.cpp</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ac5d593d658609edc1e8189750382e622"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void plot_time </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>smpls_read</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>smpls_rate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 7 2013 10:53:57 for Digital signal processing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 7 2013 20:07:08 for Nyola Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

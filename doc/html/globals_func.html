@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Digital signal processing: noise.cpp Source File</title>
+<title>Nyola Sound Library: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,11 +21,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="687474703a2f2f70686f746f73686f70636f6e746573742e636f6d2f696d616765732f6c617267652f78796d773965716470686e693664393967623261636432696f636635393063766b67316f2e6a7067"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Digital signal processing
+   <div id="projectname">Nyola Sound Library
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">is the mathematical manipulation of an information signal to modify or improve it in some way</div>
+   <div id="projectbrief">this is a library for Digital signal processing</div>
   </td>
  </tr>
  </tbody>
@@ -61,7 +62,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li class="current"><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow3" class="tabs2">
+    <ul class="tablist">
+      <li><a href="globals.html"><span>All</span></a></li>
+      <li class="current"><a href="globals_func.html"><span>Functions</span></a></li>
+      <li><a href="globals_defs.html"><span>Macros</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -79,35 +87,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle">
-<div class="title">noise.cpp</div>  </div>
-</div><!--header-->
 <div class="contents">
-<a href="noise_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a5e84ca81ad790387db0c730a5e51c420">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a5e84ca81ad790387db0c730a5e51c420" title="The function fill a pointer with aleatoriis random numbers which when they join the song they can be ...">whitenoise</a>(<span class="keywordtype">int</span> smpls_num, <span class="keywordtype">double</span>* buffer){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    srand(time(NULL));</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> sign, ran, sum;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">double</span> cons = (double) 1/sqrt(2*3.141592654);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; smpls_num; i++){</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        sign = (double) (rand()%100)/100;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        ran = (double) (rand()%100)/100;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(sign &lt;= 0.5){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            buffer[i] = ran*-1;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            buffer[i] = ran;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-</div><!-- fragment --></div><!-- contents -->
+&#160;<ul>
+<li>bandpass()
+: <a class="el" href="freqfilters_8cpp.html#ae69cfb999e5189dce4908ca44d8c4527">freqfilters.cpp</a>
+</li>
+<li>complete_arr()
+: <a class="el" href="cosft_8cpp.html#a6d73cffa3835c8d8755dcd51bf9f4b2e">cosft.cpp</a>
+, <a class="el" href="sinft_8cpp.html#a13f7a6201ceffbf554cc9491de9fc72c">sinft.cpp</a>
+</li>
+<li>cosft()
+: <a class="el" href="cosft_8cpp.html#a29db2d936a4ca1c607211130f5538f56">cosft.cpp</a>
+</li>
+<li>decode()
+: <a class="el" href="ogg__vorbis_8cpp.html#a6479e15292876c7527fce3d6b211b9c9">ogg_vorbis.cpp</a>
+</li>
+<li>encoder()
+: <a class="el" href="ogg__vorbis_8cpp.html#a5cb5a365a72ca8ce9cf56582140dbec0">ogg_vorbis.cpp</a>
+</li>
+<li>fft_west()
+: <a class="el" href="fftwest_8cpp.html#a722fe778d3066c1c2cfb33270ed29d55">fftwest.cpp</a>
+</li>
+<li>get_array_lenght()
+: <a class="el" href="cosft_8cpp.html#a0601582e0985c250dd5ae4d36c6d3241">cosft.cpp</a>
+, <a class="el" href="sinft_8cpp.html#acfb8897b1704b84a8bb8f0e8273879cf">sinft.cpp</a>
+</li>
+<li>highpass()
+: <a class="el" href="freqfilters_8cpp.html#a915020a1f1c4f648e7247672d6951217">freqfilters.cpp</a>
+</li>
+<li>ifft_west()
+: <a class="el" href="fftwest_8cpp.html#a8a8642f90078a1f666d7be89ea785a1d">fftwest.cpp</a>
+</li>
+<li>lowpass()
+: <a class="el" href="freqfilters_8cpp.html#ad0f2d1c72c192149b8f915de896c7cef">freqfilters.cpp</a>
+</li>
+<li>pitch_filter()
+: <a class="el" href="pitch__filter_8cpp.html#a30d2812b8c065f12dff1238a3cc606c9">pitch_filter.cpp</a>
+</li>
+<li>plot_freq()
+: <a class="el" href="plot_8cpp.html#ab58423964b8c9fa412acea18d6113850">plot.cpp</a>
+</li>
+<li>plot_time()
+: <a class="el" href="plot_8cpp.html#ac5d593d658609edc1e8189750382e622">plot.cpp</a>
+</li>
+<li>samples_number()
+: <a class="el" href="ogg__vorbis_8cpp.html#aebaab140e24e6a92b112674b0100443e">ogg_vorbis.cpp</a>
+</li>
+<li>samples_rate()
+: <a class="el" href="ogg__vorbis_8cpp.html#ab862a1e3b82485f6da91ec7d2e0c3497">ogg_vorbis.cpp</a>
+</li>
+<li>sinft()
+: <a class="el" href="sinft_8cpp.html#a1fb40d854e60d11b8ab4ec0e2afe6e6e">sinft.cpp</a>
+</li>
+<li>total_time()
+: <a class="el" href="ogg__vorbis_8cpp.html#ab5d694af3f62e73520d6de7b2f052440">ogg_vorbis.cpp</a>
+</li>
+<li>whitenoise()
+: <a class="el" href="noise_8cpp.html#a5e84ca81ad790387db0c730a5e51c420">noise.cpp</a>
+</li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 7 2013 10:53:57 for Digital signal processing by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 7 2013 20:07:08 for Nyola Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

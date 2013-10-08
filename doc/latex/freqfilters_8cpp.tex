@@ -23,10 +23,6 @@ void \hyperlink{freqfilters_8cpp_ae69cfb999e5189dce4908ca44d8c4527}{bandpass} (i
 \subsubsection[{P\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I~3.\-141592654}}\label{freqfilters_8cpp_a598a3330b3c21701223ee0ca14316eca}
 
 
-Definition at line 1 of file freqfilters.\-cpp.
-
-
-
 \subsection{Function Documentation}
 \hypertarget{freqfilters_8cpp_ae69cfb999e5189dce4908ca44d8c4527}{\index{freqfilters.\-cpp@{freqfilters.\-cpp}!bandpass@{bandpass}}
 \index{bandpass@{bandpass}!freqfilters.cpp@{freqfilters.\-cpp}}
@@ -46,23 +42,19 @@ The function in charge of attenuated frequecies outside of a given rack in a wav
 
 
 \begin{DoxyParams}{Parameters}
-{\em smpls\-\_\-num} & is the number of total samples. \\
+{\em smpls\-\_\-num,\-:} & is the number of total samples. \\
 \hline
-{\em smpls\-\_\-rate} & is the number of samples per second. \\
+{\em smpls\-\_\-rate,\-:} & is the number of samples per second. \\
 \hline
-{\em $\ast$buffer} & is a pointer towards the array whit the decoded song . \\
+{\em $\ast$buffer,\-:} & is a pointer towards the array whit the decoded song . \\
 \hline
-{\em $\ast$bandbuff} & is a pointer towards an array where is going to send the attenuated frequencies. \\
+{\em $\ast$bandbuff,\-:} & is a pointer towards an array where is going to send the attenuated frequencies. \\
 \hline
-{\em lowfreq} & is the is the minimun unattenuated frequency. \\
+{\em lowfreq} & \-: is the is the minimun unattenuated frequency. \\
 \hline
-{\em highfreq} & is the is the maximun unattenuated frequency. \\
+{\em highfreq} & \-: is the is the maximun unattenuated frequency. \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 44 of file freqfilters.\-cpp.
-
 \hypertarget{freqfilters_8cpp_a915020a1f1c4f648e7247672d6951217}{\index{freqfilters.\-cpp@{freqfilters.\-cpp}!highpass@{highpass}}
 \index{highpass@{highpass}!freqfilters.cpp@{freqfilters.\-cpp}}
 \subsubsection[{highpass}]{\setlength{\rightskip}{0pt plus 5cm}highpass (
@@ -80,21 +72,17 @@ The function attenuates only the lowest frequencies to a determinated frequency 
 
 
 \begin{DoxyParams}{Parameters}
-{\em \-:} & $\ast$buffer is a pointer towards the array whit the decoded song . \\
+{\em $\ast$buffer,\-:} & is a pointer towards the array whit the decoded song . \\
 \hline
-{\em \-:} & $\ast$highbuff is a pointer towards an array where is going to send the attenuated frequencies. \\
+{\em $\ast$highbuff,\-:} & is a pointer towards an array where is going to send the attenuated frequencies. \\
 \hline
-{\em \-:} & freq is the is the minimun unattenuated frequency. \\
+{\em freq,\-:} & is the is the minimun unattenuated frequency. \\
 \hline
-{\em \-:} & smpls\-\_\-num es el tamaño del array buffer \\
+{\em smpls\-\_\-num,\-:} & es el tamaño del array buffer \\
 \hline
-{\em \-:} & smpls\-\_\-rate is the number of samples per second. \\
+{\em smpls\-\_\-rate,\-:} & is the number of samples per second. \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 26 of file freqfilters.\-cpp.
-
 \hypertarget{freqfilters_8cpp_ad0f2d1c72c192149b8f915de896c7cef}{\index{freqfilters.\-cpp@{freqfilters.\-cpp}!lowpass@{lowpass}}
 \index{lowpass@{lowpass}!freqfilters.cpp@{freqfilters.\-cpp}}
 \subsubsection[{lowpass}]{\setlength{\rightskip}{0pt plus 5cm}lowpass (
@@ -112,18 +100,14 @@ The function attenuates only the highest frequencies to a determinated frequency
 
 
 \begin{DoxyParams}{Parameters}
-{\em \-:} & $\ast$buffer is a pointer towards the array whit the decoded song . \\
+{\em $\ast$buffer,\-:} & is a pointer towards the array whit the decoded song . \\
 \hline
-{\em \-:} & $\ast$lowbuff is a pointer towards an array where is going to send the attenuated frequencies. \\
+{\em $\ast$lowbuff,\-:} & is a pointer towards an array where is going to send the attenuated frequencies. \\
 \hline
-{\em \-:} & freq is the is the maximun unattenuated frequency. \\
+{\em freq,\-:} & is the is the maximun unattenuated frequency. \\
 \hline
-{\em \-:} & smpls\-\_\-num is the number of total samples. \\
+{\em smpls\-\_\-num,\-:} & is the number of total samples. \\
 \hline
-{\em \-:} & smpls\-\_\-rate is the number of samples per second. \\
+{\em smpls\-\_\-rate,\-:} & is the number of samples per second. \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 10 of file freqfilters.\-cpp.
-
