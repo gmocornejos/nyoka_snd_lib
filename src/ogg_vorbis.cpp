@@ -19,7 +19,7 @@
 
 /*! \fn samples_number(const char *fname)
  * \brief The function  receives a pointer towards to the name of the archive thar has to be .ogg and return the number of tatal samples 
- * \param :*fname is  a pointer towards the name and direction of the song.
+ * \param *fname: is  a pointer towards the name and direction of the song.
  * \return The number of samples in total song.
 */
 int samples_number(const char *fname){
@@ -34,7 +34,7 @@ int samples_number(const char *fname){
 }
 /*! \fn total_time(const char *fname)
  * \brief The function  receives a pointer towards to the name of the archive thar has to be .ogg and return the time of the song in seconds 
- * \param *fname is  a pointer towards the name and direction of the song.
+ * \param *fname : is  a pointer towards the name and direction of the song.
  * \return The total time in seconds song.
 */
 double total_time(const char *fname){
@@ -49,7 +49,7 @@ double total_time(const char *fname){
 }
 /*! \fn samples_rate(const char *fname)
  * \brief The function  receives a pointer towards to the name of the archive thar has to be .ogg and return the samples for second
- * \param *fname is  a pointer towards the name and direction of the song.
+ * \param *fname : is  a pointer towards the name and direction of the song.
  * \return The samples for second of the song.
 */
 double samples_rate(const char *fname){
@@ -64,9 +64,9 @@ double samples_rate(const char *fname){
 }
 /*! \fn decode(const char *fname, double *buffer, int smpls_num)
  * \brief The functiondecodes the song in a real array and send it to buffer this need the file are monochannel sound and be a .ogg.
- * \param  *buffer is a pointer towards array where de decoder song are sent.
- * \param  *fname is  a pointer towards the name and direction of the song.
- * \param  smpls_num is the number of total samples and is equal to size of buffer.
+ * \param  *buffer : is a pointer towards array where de decoder song are sent.
+ * \param  *fname : is  a pointer towards the name and direction of the song.
+ * \param  smpls_num : is the number of total samples and is equal to size of buffer.
  * \return the number of samples read 
  */
 // de datos a archivo  
@@ -97,11 +97,11 @@ long decode(const char *fname, double *buffer, int smpls_num){
 
 /** \fn encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate).
  * \brief The function  is the inverce to decoder this convert a array in a file .ogg using pointers
- * \param  *outfilename is pointer toward the first letter to file where send the array once encoder
- * \param  *inbuffer is a pointer to the array whit the song decoder or the file you want to convert.
- * \param  *fname is  a pointer towards the fist letter to the archive song.
- * \param  smpls_num is the number of total samples and is equal to size of buffer.
- * \param  smpls_rate is the number of samples per second.
+ * \param  *outfilename: is pointer toward the first letter to file where send the array once encoder
+ * \param  *inbuffer: is a pointer to the array whit the song decoder or the file you want to convert.
+ * \param  *fname : is  a pointer towards the fist letter to the archive song.
+ * \param  smpls_num : is the number of total samples and is equal to size of buffer.
+ * \param  smpls_rate : is the number of samples per second.
  */
 //codificarlo comprime el acrchivo y empaquetarlo 
 void encoder(const char *outfilename, double *inbuffer, int smpls_num, double smpls_rate){

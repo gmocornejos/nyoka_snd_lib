@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Nyoka Sound Library: cosft.cpp File Reference</title>
+<title>Nyola Sound Library: cosft.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,10 +23,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="687474703a2f2f70686f746f73686f70636f6e746573742e636f6d2f696d616765732f6c617267652f78796d773965716470686e693664393967623261636432696f636635393063766b67316f2e6a7067"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nyoka Sound Library
-   &#160;<span id="projectnumber">alfa 1</span>
+   <div id="projectname">Nyola Sound Library
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Is a library of digital signal processing</div>
+   <div id="projectbrief">this is a library for Digital signal processing</div>
   </td>
  </tr>
  </tbody>
@@ -102,7 +102,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6d73cffa3835c8d8755dcd51bf9f4b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function fill an array power of two with other smaller or equal array and with zeros in extra spaces.  <a href="#a6d73cffa3835c8d8755dcd51bf9f4b2e">More...</a><br/></td></tr>
 <tr class="separator:a6d73cffa3835c8d8755dcd51bf9f4b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29db2d936a4ca1c607211130f5538f56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cosft_8cpp.html#a29db2d936a4ca1c607211130f5538f56">cosft</a> (double *y, complex&lt; double &gt; *rbuffer, const int size)</td></tr>
-<tr class="memdesc:a29db2d936a4ca1c607211130f5538f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">:Is the function in charge to realize the cosine transform the one that you can obtain with equation $f_j = {k=0}^{n-1} x_k  [{}{n} j (k+{1}{2}) ]$  <a href="#a29db2d936a4ca1c607211130f5538f56">More...</a><br/></td></tr>
+<tr class="memdesc:a29db2d936a4ca1c607211130f5538f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the function in charge to realize the cosine transform the one that you can obtain with equation $f_j = {k=0}^{n-1} x_k  [{}{n} j (k+{1}{2}) ]$.  <a href="#a29db2d936a4ca1c607211130f5538f56">More...</a><br/></td></tr>
 <tr class="separator:a29db2d936a4ca1c607211130f5538f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -139,18 +139,18 @@ Functions</h2></td></tr>
 <p>This function fill an array power of two with other smaller or equal array and with zeros in extra spaces. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>"*arr_in" is a pointer towards the smallest array with which will fill the biggest array. </td></tr>
-    <tr><td class="paramname">:</td><td>"*arr_out" is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. </td></tr>
-    <tr><td class="paramname">:</td><td>"size" is the size of the smaller array .</td></tr>
+    <tr><td class="paramname">*arr_in,:</td><td>is a pointer towards the smallest array with which will fill the biggest array. </td></tr>
+    <tr><td class="paramname">*arr_out,:</td><td>is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. </td></tr>
+    <tr><td class="paramname">size,:</td><td>is the size of the smaller array .</td></tr>
   </table>
   </dd>
 </dl>
 <p>It is equivalent to the imaginary parts of a DFT of roughly twice the length, is a linear and invertible function </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>"*arr_in" is a pointer towards the smallest array with which will fill the biggest array. </td></tr>
-    <tr><td class="paramname">:</td><td>"*arr_out" is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. </td></tr>
-    <tr><td class="paramname">:</td><td>"size" is the size of the smaller array . </td></tr>
+    <tr><td class="paramname">*arr_in,:</td><td>is a pointer towards the smallest array with which will fill the biggest array. </td></tr>
+    <tr><td class="paramname">*arr_out,:</td><td>is a pointer towards the biggest array where is goint to get out the smaller array one time that is complete with the zeros. </td></tr>
+    <tr><td class="paramname">size,:</td><td>is the size of the smaller array . </td></tr>
   </table>
   </dd>
 </dl>
@@ -187,13 +187,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>:Is the function in charge to realize the cosine transform the one that you can obtain with equation $f_j = {k=0}^{n-1} x_k  [{}{n} j (k+{1}{2}) ]$ </p>
-<p>: this funcion is variation of the fast fourier transform,this give the sum of cosine functions oscillating at different frequencies from lossy compression of audio and images </p>
+<p>Is the function in charge to realize the cosine transform the one that you can obtain with equation $f_j = {k=0}^{n-1} x_k  [{}{n} j (k+{1}{2}) ]$. </p>
+<p>this funcion is variation of the fast fourier transform,this give the sum of cosine functions oscillating at different frequencies from lossy compression of audio and images </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>"size" is the size of the array. </td></tr>
-    <tr><td class="paramname">:</td><td>"*y" is a pointer towards an array that has to be of a size power of two. </td></tr>
-    <tr><td class="paramname">:</td><td>"*rbuffer" is a pointer towards an array where is going to return the cosine transform into other array of complex numbers. </td></tr>
+    <tr><td class="paramname">size,:</td><td>is the size of the array. </td></tr>
+    <tr><td class="paramname">*y,:</td><td>is a pointer towards an array that has to be of a size power of two. </td></tr>
+    <tr><td class="paramname">*rbuffer,:</td><td>is a pointer towards an array where is going to return the cosine transform into other array of complex numbers. </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>number result: Is the number power of two closest and bigger than size .</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>is the size of the array </td></tr>
+    <tr><td class="paramname">size</td><td>: is the size of the array </td></tr>
   </table>
   </dd>
 </dl>
@@ -246,7 +246,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 7 2013 13:07:18 for Nyoka Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 7 2013 20:07:08 for Nyola Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

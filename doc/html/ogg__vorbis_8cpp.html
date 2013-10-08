@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Nyoka Sound Library: ogg_vorbis.cpp File Reference</title>
+<title>Nyola Sound Library: ogg_vorbis.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,10 +23,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="687474703a2f2f70686f746f73686f70636f6e746573742e636f6d2f696d616765732f6c617267652f78796d773965716470686e693664393967623261636432696f636635393063766b67316f2e6a7067"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nyoka Sound Library
-   &#160;<span id="projectnumber">alfa 1</span>
+   <div id="projectname">Nyola Sound Library
+   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Is a library of digital signal processing</div>
+   <div id="projectbrief">this is a library for Digital signal processing</div>
   </td>
  </tr>
  </tbody>
@@ -166,9 +166,9 @@ Functions</h2></td></tr>
 <p>The functiondecodes the song in a real array and send it to buffer this need the file are monochannel sound and be a .ogg. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>*buffer is a pointer towards array where de decoder song are sent. </td></tr>
-    <tr><td class="paramname">:</td><td>*fname is a pointer towards the fist letter to the archive song. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
+    <tr><td class="paramname">*buffer</td><td>: is a pointer towards array where de decoder song are sent. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the name and direction of the song. </td></tr>
+    <tr><td class="paramname">smpls_num</td><td>: is the number of total samples and is equal to size of buffer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -215,22 +215,22 @@ Functions</h2></td></tr>
 <p>The function is the inverce to decoder this convert a array in a file .ogg using pointers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>*outfilename is pointer toward the first letter to file where send the array once encoder </td></tr>
-    <tr><td class="paramname">:</td><td>*inbuffer is a pointer to the array whit the song decoder or the file you want to convert. </td></tr>
-    <tr><td class="paramname">:</td><td>*fname is a pointer towards the fist letter to the archive song. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_rate is the number of samples per second.</td></tr>
+    <tr><td class="paramname">*outfilename,:</td><td>is pointer toward the first letter to file where send the array once encoder </td></tr>
+    <tr><td class="paramname">*inbuffer,:</td><td>is a pointer to the array whit the song decoder or the file you want to convert. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">smpls_num</td><td>: is the number of total samples and is equal to size of buffer. </td></tr>
+    <tr><td class="paramname">smpls_rate</td><td>: is the number of samples per second.</td></tr>
   </table>
   </dd>
 </dl>
 <p>The function the function choose a centroid and does window as a bell of Hann,whit this one values all the points ariund the centroid and does the point if greatest amplitude pitch and the point of less aplitude unpitc,with this made groups around,start to calculate the news centroids using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations, chages the size of the window exponentially dependin of the increment. is chosen the size of the window with more distance between the centroids </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:</td><td>*buffer is a pointer towards array where de decoder song is saves. </td></tr>
-    <tr><td class="paramname">:</td><td>percent is percent od samples per second. </td></tr>
-    <tr><td class="paramname">:</td><td>increment is the increment and is given exponentially. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_num is the number of total samples and is equal to size of buffer. </td></tr>
-    <tr><td class="paramname">:</td><td>smpls_rate is the number of samples per second. </td></tr>
+    <tr><td class="paramname">*buffer,:</td><td>is a pointer towards array where de decoder song is saves. </td></tr>
+    <tr><td class="paramname">percent,:</td><td>is percent od samples per second. </td></tr>
+    <tr><td class="paramname">increment,:</td><td>is the increment and is given exponentially. </td></tr>
+    <tr><td class="paramname">smpls_num,:</td><td>is the number of total samples and is equal to size of buffer. </td></tr>
+    <tr><td class="paramname">smpls_rate,:</td><td>is the number of samples per second. </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,7 +254,7 @@ Functions</h2></td></tr>
 <p>The function receives a pointer towards to the name of the archive thar has to be .ogg and return the number of tatal samples. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:*fname</td><td>is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">*fname,:</td><td>is a pointer towards the name and direction of the song. </td></tr>
   </table>
   </dd>
 </dl>
@@ -279,7 +279,7 @@ Functions</h2></td></tr>
 <p>The function receives a pointer towards to the name of the archive thar has to be .ogg and return the samples for second. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:*fname</td><td>is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the name and direction of the song. </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,7 +304,7 @@ Functions</h2></td></tr>
 <p>The function receives a pointer towards to the name of the archive thar has to be .ogg and return the time of the song in seconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">:*fname</td><td>is a pointer towards the fist letter to the archive song. </td></tr>
+    <tr><td class="paramname">*fname</td><td>: is a pointer towards the name and direction of the song. </td></tr>
   </table>
   </dd>
 </dl>
@@ -315,7 +315,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 7 2013 13:07:18 for Nyoka Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 7 2013 20:07:08 for Nyola Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -6,9 +6,9 @@
 using namespace std;
 /*! \fn pitch_filter(int smpls_num, int smpls_rate, double *inbuffer, double percent, double increment)
  * \brief The function receives a pointer to real array   and with their generates a graphyc respect to time.
- * \param   *buffer is  a pointer towards the array whit the decoded song .
- * \param   smpls_read is the number of  samples read .   
- * \param   smpls_rate is the number of samples per second.
+ * \param   *buffer: is  a pointer towards the array whit the decoded song .
+ * \param   smpls_read: is the number of  samples read .   
+ * \param   smpls_rate: is the number of samples per second.
  */
 
 void plot_time(double *buffer, int smpls_read, double smpls_rate){
