@@ -6,8 +6,8 @@
 using namespace std;
 /*! \fn whitenoise(int smpls_num, double* buffer)
  * \brief The function fill a pointer with aleatoriis random numbers which when they join the song they can be seen like noisy.
- * \param  : *buffer is a pointer towards an array where is going to return the ramdon numbers.
- * \param  : smpls_num is the number of total samples and is equal to size of buffer.
+ * \param   *buffer is a pointer towards an array where is going to return the ramdon numbers.
+ * \param   smpls_num is the number of total samples and is equal to size of buffer.
  */
 void whitenoise(int smpls_num, double* buffer){
 	srand(time(NULL));

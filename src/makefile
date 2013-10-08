@@ -16,10 +16,10 @@ pitch_filter:
 	g++ -c pitch_filter.cpp
 
 cosft:
-	g++ -c -I../include cosft.cpp
+	g++ -c cosft.cpp
 
 sinft:
-	g++ -c -I../include sinft.cpp
+	g++ -c sinft.cpp
 
 freqfilters:
 	g++ -c freqfilters.cpp

@@ -17,11 +17,11 @@ using namespace std;
  * using f2 and f3,repeat the proces until the centroids aren't moving or until 100 iterations,
  * chages the size of the window exponentially dependin of the increment.
  * is chosen the size of the window with more distance between the centroids
- * \param : *buffer is a pointer towards array where de decoder song is saves.
- * \param : percent is percent od samples per second.
- * \param : increment is the increment and is given exponentially.
- * \param : smpls_num is the number of total samples and is equal to size of buffer.
- * \param : smpls_rate is the number of samples per second.
+ * \param  *buffer is a pointer towards array where de decoder song is saves.
+ * \param  percent is percent od samples per second.
+ * \param  increment is the increment and is given exponentially.
+ * \param  smpls_num is the number of total samples and is equal to size of buffer.
+ * \param  smpls_rate is the number of samples per second.
  */
 
 // Recommended values: percent ~0.1 increment ~.45
