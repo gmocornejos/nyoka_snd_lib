@@ -17,7 +17,7 @@ using namespace std;
 
 
 int get_array_lenght (const int size) {	
-	
+
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
 		if(pow(2, n) >= size){
