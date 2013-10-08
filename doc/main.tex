@@ -135,7 +135,7 @@ c_0(n,\mu,N)=\frac{\sum_{n'=-N}^N (1-\mu(n'-n))s(n'+n)w_N(n')}{\sum_{n'=-N}^N (1
 \end{align}
 Finally, the class membership of the signal at time $n$:
 \begin{align}
-m(n)=\left(\frac{s(n)-c_o}{c_i-c_o}\right)
+m(n)=\Big [ \left(\frac{s(n)-c_o}{c_i-c_o}\right)>0.5 \Big ]
 \end{align}
 $N$ is defined recursively from $1$ until the size of the pitch stregth trace is reached increasing  its values by  a factor of $2^{1/4}$. The algorithm stops when $\mu$ reaches a fixed point or  after 100 iterations.
 \subsection{Low pass, High pass and Band pass filters}

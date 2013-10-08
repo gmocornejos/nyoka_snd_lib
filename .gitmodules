@@ -1,0 +1,3 @@
+[submodule "wiki"]
+	path = wiki
+	url = git://github.com/gmocornejos/nyoka_snd_lib.wiki.git
