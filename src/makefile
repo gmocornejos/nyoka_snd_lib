@@ -1,4 +1,4 @@
-all: plot ogg_vorbis fftwest noise pitch_filter sinft cosft freqfilters lib
+all: plot ogg_vorbis fftwest fft noise pitch_filter sinft cosft freqfilters lib
 
 plot:
 	g++ -c plot.cpp
@@ -8,6 +8,9 @@ ogg_vorbis:
 
 fftwest:
 	g++ -c `pkg-config --cflags fftw3` fftwest.cpp
+
+fft:
+	g++ -c fft.cpp
 
 noise:
 	g++ -c noise.cpp	
