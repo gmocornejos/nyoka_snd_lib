@@ -17,7 +17,7 @@ using namespace std;
 
 
 int get_array_lenght (const int size) {	
->>>>>>> c9ff48693d872e4de93dbd7f8c40c74cce94b2e7
+
 
 	int n,array_lenght=0;
 	for (n=2; 3<4; n++) {
