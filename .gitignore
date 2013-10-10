@@ -8,9 +8,7 @@
 *.out
 *.ind 
 *.ilg
-*.sty
 *.toc
-*.png
 *.css
 *.js
 outputdata.txt
