@@ -92,6 +92,9 @@ Next, to compile the whole library you can make:
 
 	$ ./compile.sh
 
+
+Compiling the whole library also gets the newest documentation and enables 
+it for your consult.
 To compile you need to have installed in you system the requirement
 listed above, the g++ compiler and the pkg-config utility. To do so 
 you can open a terminal and type (assuming you are using debian or any of
