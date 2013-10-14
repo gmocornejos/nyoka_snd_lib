@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Nyola Sound Library: plot.cpp File Reference</title>
+<title>Nyola Sound Library: noise.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,6 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,98 +80,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">plot.cpp File Reference</div>  </div>
+<div class="title">noise.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &lt;fstream&gt;</code><br/>
-<code>#include &lt;complex&gt;</code><br/>
-</div>
-<p><a href="plot_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ac5d593d658609edc1e8189750382e622"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot_8cpp.html#ac5d593d658609edc1e8189750382e622">plot_time</a> (double *buffer, int smpls_read, double smpls_rate)</td></tr>
-<tr class="separator:ac5d593d658609edc1e8189750382e622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab58423964b8c9fa412acea18d6113850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plot_8cpp.html#ab58423964b8c9fa412acea18d6113850">plot_freq</a> (complex&lt; double &gt; *buffer, int smpls_read, double smpls_rate)</td></tr>
-<tr class="separator:ab58423964b8c9fa412acea18d6113850"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ab58423964b8c9fa412acea18d6113850"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void plot_freq </td>
-          <td>(</td>
-          <td class="paramtype">complex&lt; double &gt; *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>smpls_read</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>smpls_rate</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="plot_8cpp_source.html#l00032">32</a> of file <a class="el" href="plot_8cpp_source.html">plot.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac5d593d658609edc1e8189750382e622"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void plot_time </td>
-          <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>smpls_read</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>smpls_rate</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="plot_8cpp_source.html#l00014">14</a> of file <a class="el" href="plot_8cpp_source.html">plot.cpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<a href="noise_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a5e84ca81ad790387db0c730a5e51c420">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a5e84ca81ad790387db0c730a5e51c420" title="The function fill a pointer with aleatoriis random numbers which when they join the song they can be ...">whitenoise</a>(<span class="keywordtype">int</span> smpls_num, <span class="keywordtype">double</span>* buffer){</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    srand(time(NULL));</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> sign, ran, sum;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">double</span> cons = (double) 1/sqrt(2*3.141592654);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; smpls_num; i++){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        sign = (double) (rand()%100)/100;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        ran = (double) (rand()%100)/100;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(sign &lt;= 0.5){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            buffer[i] = ran*-1;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            buffer[i] = ran;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Sun Oct 13 2013 20:39:37 for Nyola Sound Library by &#160;<a href="http://www.doxygen.org/index.html">
