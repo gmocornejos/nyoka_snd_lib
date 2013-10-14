@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 	long smpls_read = decode(fname, buffer, smpls_num);
 	cout << "smpls_read " << smpls_read << "\n";
 	
-	int tam = get_array_lenght(smpls_num);
+	int tam = get_array_lenght (smpls_num);
 	cout << "new size " << tam << "\n";
 	
 	double *abuffer = (double*)malloc(tam*sizeof(double));

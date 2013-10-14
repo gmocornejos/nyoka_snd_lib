@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include <math.h>
-#include <stdlib.h>
 #include <complex>
 
 #include <fftwest.hh>
@@ -73,13 +72,10 @@ void cosft (double *y, complex<double> *rbuffer, const int size){
 	}
 
 	yy[n/2]=y[n/2];
-	
-	cout << "antes de aplicar fourier " << "\n";
 
 	complex<double> *retbuffer = (complex<double>*) malloc((0.5*n+1)*sizeof(complex<double>));
 	fft_west(size, yy, retbuffer);
 	free(yy);
-	cout << "despues de aplicar fourier " << "\n";
 	
 	for (j=0;j<(0.5*n+1);j++) rbuffer[j]=retbuffer[j];
 	//y[n]=y[1];
