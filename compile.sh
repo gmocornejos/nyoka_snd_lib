@@ -11,4 +11,9 @@ cd ../examples
 echo "Compiling examples"
 make
 
+cd ..
+echo "Getting the newest documentation"
+git submodule init
+git submodule update
+
 echo "Done."
