@@ -1,0 +1,145 @@
+	************** NYOKA SOUND LIBRARY ********************
+
+    Copyright (C) 2013  Guillermo Cornejo S. 	GmoCornejoS@gmail.com
+			Arturo Apú Chinchilla	arturoapu@gmail.com
+			Johel Rodriguez Pineda	josejohelrodriguez@gmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+====================================================================
+
+DESCRIPTION.
+
+Nyoka sound library intents to provide a simple API to work with 
+sound. In general you will be able to decode a sound into an array,
+filtering or transforming this sound to the frequency domain and 
+finally encoding this sound again. 
+At today you can deconde a ogg/vorbis sound file into an array and vice versa. 
+You can plot in time and frequency domain.
+In time domain you can apply low, high and band pass and use the pitch filter.
+In frequency domain you can apply the Fast Fourier Transform (using FFTW3), 
+sine and cosine transform.
+
+Nyoka sound library needs ogg and vorbis librarys and (optional) 
+Fast Fourier Transform of West library to work. Both can be found in
+extern_libraries. Installing gnuplot is required to plot. 
+
+	You can find more information in https://github.com/gmocornejos/nyoka_snd_lib/wiki
+
+This library is organized as follows:
+
+	- audiofiles contains files in ogg/vorbis to test the functions.
+	- build stores the compiled object files to link with your program.
+	- doc contains the documentation.
+	- examples contain source code files using functions of this
+	library.
+	- external_libraries contains ogg, vorbis and fftw3 libraries.
+	Nyoka needs this libraries to work. (fftw is optional)
+	- include contains the header files.
+	- plotscrips contains scripts files with instructions for gnuplot. 
+	- src contains the source files. 
+
+
+====================================================================
+
+REQUIREMENTS
+
+	- To plot you need to install gnuplot. For ubuntu/debian:
+		sudo apt-get install gnuplot
+
+	- To decode/encode Nyoka needs the ogg and vorbis library.
+	both are include in external_libraries directory. To install
+	ogg open a terminal and enter to nyoka_snd_lib/external_libraries/libogg-version 
+	(current version: 1.3.1) and make:
+		$ ./configure
+		$ make
+		$ sudo make install
+	To install vorbis go to external_libraries/libvorbis-version
+	(current version: 1.3.3) and make:
+		$ ./configre
+		$ make
+		$ sudo make install
+
+	- Finally if you want to install Fast Fourier Transform in the West
+	you can make:
+		$ ./configure
+		$ make
+		$ sudo make install
+
+====================================================================
+	
+COMPILING
+
+	A compiling script can be found in main		directory. To run it 
+you first need to change it's permissions in order to make it executable. 
+This can be done by opening the library directory in a terminal and typing :
+
+	$ chmod u+x compile.sh
+
+Next, to compile the whole library you can make:
+
+	$ ./compile.sh
+
+Compiling the whole library also gets the newest documentation and enables it for your consult.
+To compile you need to have installed in you system the requirement
+listed above, the g++ compiler and the pkg-config utility. To do so 
+you can open a terminal and type (assuming you are using debian or any of
+it's variants):
+
+	$ sudo apt-get install g++
+	$ sudo apt-get install pkg-config	
+	
+Pkg-config is an utility to make easier finding headers and .so 
+(shared objects) of libraries while compiling. 
+Although Nyoka_snd_lib do no install anything in your systems it relies
+in other libraries and needs this utility to find them. 
+ 
+====================================================================
+
+USING
+
+	Nyoka sound library is formed up of binary compiled objects,
+which can be found in build directory. To use the library you need to
+include the right headers in you source code and, while compiling your
+program, you need to link with the corresponding object file. 
+	You can look in examples directory to check up the implementation
+and compiling process. Next is a brief explanation:
+
+	Take for example the decoder.cpp program, which is in examples
+directory. First you find the include statments. In line 5 we included
+the header <plot.hh> to be able to plot sound in time a frequency domain.
+Once you set the right include statments in your programs you must
+tell the compiler where to find them, in this case the header files 
+are in include directory, then using g++ (if you are using another
+compiler you should read it's documentation about including headers)
+
+	$ g++ -c -I../include decoder.cpp
+
+The above command tells g++ to compile (-c) decoder.cpp, and let it knows
+where to find the requiere headers, -I stands for include and next is 
+the relative path. 
+	Once compiled you need to create an executable file. 
+
+	$ g++ -o decoder.exe decoder.o ../build/plot.o $(VORBIS)
+
+This indicates g++ to create an executable output file (-o decoder.exe)
+using the compiled source from decoder.o (the program we just compiled above)
+and ../build/plot.o, a compiled object from Nyoka_snd_lib. The $(VORBIS)
+stuff is just a variable, while running it is replaced by it's content,
+in this case the first line of examples/makefile. Basically decoder.exe contains
+the binary code from decoder.o, plot.o and vorbis library. 
+  
+	Now you have an executable file that integrates the compiled
+source of your program and Nyoka sound library. 
